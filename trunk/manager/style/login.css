@@ -1,0 +1,42 @@
+/* CSS Document */
+.bg_1 {
+	background-image:url(../images/login_bg.gif);
+	height:293px;
+	text-align:center;
+	width:100%
+}
+.bg_167 {
+	background-image:url(../images/login_1.gif);
+	height:167px;
+}
+.bg_39 {
+	background-image:url(../images/login_2.gif);
+	height:39px;
+}
+.bg_87 {
+	background-image:url(../images/login_3.gif);
+	height:87px;
+}
+.btn {
+	width:76px;
+	height:26px;
+	background-image:url(../images/admin_menu.gif)
+}
+.login_box {
+	position:absolute;
+	top:50%;
+	height:293px;
+	margin-top:-150px;
+}
+.yy {
+	filter: shadow(color=57A2DE, direction=120);
+	zoom:1;
+	padding:1px;
+}
+.text_box {
+	width:95px;
+	height:21px;
+	line-height:21px;
+	padding-left:25px;
+	overflow:hidden;
+}
