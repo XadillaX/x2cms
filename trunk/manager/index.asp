@@ -23,6 +23,7 @@
               </tr>
             </table></td>
           <td width="10">&nbsp;</td>
+          <td width="90"><a href="admin_chg_pwd.asp" target="BoardList" class=""><div class="btn_81x22">修改密码</div></a></td>
           <td width="100"><a href="logout.asp" class=""><div class="btn_81x22">退出系统</div></a></td>
         </tr>
       </table></td>

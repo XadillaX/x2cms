@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%
+	'--------------------------
+	' * 网站后台菜单
+	' * By XadillaX
+	' * http://xcoder.in
+	'--------------------------
+%>
+<!--#include file="admin_common.asp" --><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="style/link.css" rel="stylesheet" type="text/css" />
@@ -12,8 +19,13 @@
 <div class="accordion">
 	<!--<h3>标题</h3>
 	<ul>
-		<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="add_user.asp" target="BoardList">栏目</a></li>-->
+		<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="add_user.asp" target="BoardList">栏目</a></li>
 	</ul>
+	-->
+	
+	<%
+		if SuperAdmin then
+	%>
 	<h3>系统设置</h3>
 	<ul>
 		<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_config.asp" target="BoardList">系统常量</a></li>
@@ -21,7 +33,11 @@
 	</ul>
     <h3>管理员管理</h3>
 	<ul>
+		<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_admin.asp" target="BoardList">管理员列表</a></li>
 	</ul>
+	<%
+		end if
+	%>
 </div>
 </body>
 </html>

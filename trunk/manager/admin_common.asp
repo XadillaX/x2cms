@@ -1,4 +1,4 @@
-<%
+﻿<%
 	'--------------------------
 	' * 管理员通用页面
 	' * By XadillaX
@@ -6,6 +6,7 @@
 	'--------------------------
 %>
 <!--#include file="../config.asp" -->
+<!--#include file="admin_func.asp" -->
 <%
 	dim SuperPages, PageName
 	
@@ -14,12 +15,14 @@
 	PageName = LCase(Easp.GetUrl(0))
 
 	' 判断是否登录
-	dim Logined, Username, LoginTime, LoginIP
+	dim Logined, Username, LoginTime, LoginIP, aid, SuperAdmin
+	SuperAdmin = Session(SessionPre & "admin_type")
 	Logined = Session(SessionPre & "admin_logined")
 	if not inull(Logined) then
 		Username = Session(SessionPre & "admin_username")
 		dim TempUsername, NowTime
 		TempUsername = LCase(Easp.db.RT("admin", "username='" & Username & "'", "username"))
+		aid = Easp.db.RT("admin", "username='" & Username & "'", "aid")
 		if TempUsername <> Username or DateDiff("s", Now(), Session(SessionPre & "admin_acttime")) > 3600 then
 			Logined = false
 		end if
@@ -28,7 +31,8 @@
 	end if
 	
 	' 如果未登录
-	if Logined = false then
+	if Logined = false and PageName <> AdminPath & "index.asp" and PageName <> AdminPath then
+		Easp.db.AR "admin_log", Array("username:NULL", "logtext:" & "未登录用户尝试进入页面：<a href=" & Easp.GetUrl(1) & ">" & Easp.GetUrl(1) & "</a>。", "time:" & Now(), "ip:" & realip)
 		Easp.AlertUrl "你尚未登录！", "login.asp"
 	end if
 	
