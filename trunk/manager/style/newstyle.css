@@ -2,6 +2,10 @@
 .t_r { text-align: right; }
 .t_l { text-align: left; }
 
+.fl { float: left; }
+.fr { float: right; }
+.cl { clear: both; }
+
 .hint { color: #ff0000; }
 .round_angle15 { -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; }
 

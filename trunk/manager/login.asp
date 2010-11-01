@@ -13,6 +13,7 @@
 <link href="style/base.css" rel="stylesheet" type="text/css" />
 <link href="style/login.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="style/font.css">
+<script language="JavaScript" type="text/javascript" src="../js/easyui/jquery-1.4.2.min.js"></script>
 <script type="text/javascript">    
     if (document.addEventListener)   
     {//如果是Firefox    
@@ -37,6 +38,12 @@
             document.forms[0].submit();    
         }    
     }   
+	
+$(function(){
+	$("#vcode_img").click(function(){
+		$(this).attr("src", "/cls/vcode.class.asp?" + Math.random());	
+	})
+});
 </script>
 </head>
 <body>
@@ -71,7 +78,7 @@
                     <td><label>
                         <input name="yzm" type="text" class="text_box" id="yzm" style="background-image:url(images/text_bg03.gif)" size="20" maxlength="8">
                       </label></td>
-                    <td><img src="/cls/vcode.class.asp?time=<%=Now()%>" height="20" /></td>
+                    <td><img title="点击以刷新" style="cursor: pointer;" id="vcode_img" src="/cls/vcode.class.asp?time=<%=Now()%>" height="20" /></td>
                     <td><img src="images/dr_btn.gif" width="63" height="22" onClick="document.form1.submit()" /></td>
                   </tr>
                 </table>

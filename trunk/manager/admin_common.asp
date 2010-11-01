@@ -11,7 +11,13 @@
 	dim SuperPages, PageName
 	
 	' 超级管理员相关设置
-	SuperPages = Array(AdminPath & "admin_admin.asp", AdminPath & "admin_log.asp", AdminPath & "admin_config.asp", AdminPath & "admin_config_chk.asp")
+	SuperPages = Array()
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_admin.asp")
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_admin_chkedit.asp")
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_log.asp")
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_config.asp")
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_config_chk.asp")
+	
 	PageName = LCase(Easp.GetUrl(0))
 
 	' 判断是否登录
@@ -59,7 +65,7 @@
 	SkinCount = i
 	
 	' 减少一个浏览量
-	VisCount			=	Easp.db.RT("config", "id=1", "viscount") - 1
+	VisCount = Easp.db.RT("config", "id=1", "viscount") - 1
 	result = Easp.db.UR("config", "id=1", Array("viscount:" & VisCount))
 	if result = 0 Then
 		VisCount = VisCount + 1

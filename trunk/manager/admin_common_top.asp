@@ -8,7 +8,10 @@
 <link href="style/base.css" rel="stylesheet" type="text/css" />
 <link href="style/user.css" rel="stylesheet" type="text/css" />
 <link href="style/newstyle.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../js/easyui/jquery-1.4.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../js/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="../js/easyui/themes/icon.css">
 </head>
 <body>
 <script type="text/javascript">

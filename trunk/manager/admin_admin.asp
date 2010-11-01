@@ -19,6 +19,49 @@
 %>
 <!--#include file="admin_common_top.asp" -->
 
+<script type="text/javascript">
+$(function(){
+	/* Init the dialog */
+	$("#edit_admin").dialog();
+	$("#edit_admin").dialog('close');
+});
+
+function open_edit_dialog(username, aid, issuper)
+{
+	/* Change the value of text or inputs */
+	$("#edit_acmin_username").html(username);
+	$("#edit_admin_un").val(username);
+	$("#edit_admin_aid").val(aid);
+	if(issuper) 
+	{
+		$("#RadioGroup1_2").attr("checked", " "); 
+		$("#RadioGroup1_3").removeAttr("checked"); 
+	}
+	else
+	{
+		$("#RadioGroup1_3").attr("checked", " "); 
+		$("#RadioGroup1_2").removeAttr("checked"); 
+	}
+	
+	/* Open dialog */
+	$("#edit_admin").dialog({
+		title: '修改管理员 - ' + username,
+		buttons:[{
+			text:'修改',
+			iconCls:'icon-ok',
+			handler:function(){
+				$("#edit_admin_form").submit();
+			}
+		},{
+			text:'取消',
+			handler:function(){
+				$('#edit_admin').dialog('close');
+			}
+		}]
+	});	
+}
+</script>
+
 <table class="mytable" border="0" cellspacing="0" cellpadding="0">
     <tr class="table_title">
         <td width="6%" valign="middle">编号</td>
@@ -36,7 +79,7 @@
     <tr class="table_row <%=iif(i mod 2 = 1, "table_row_clr_1", "table_row_clr_2")%>">
         <td><%=rs("aid")%></td>
         <td><%=rs("username")%></td>
-        <td><a href="admin_admin_edit.asp?aid=<%=rs("aid")%>">编辑</a> / 删除</td>
+        <td><a href="#" onclick="open_edit_dialog('<%=rs("username")%>', '<%=rs("aid")%>', <%=iif(rs("superadmin") = true, "true", "false")%>)">编辑</a> / 删除</td>
         <td><span class="hint"><%=iif(rs("superadmin") = true, "√", "×")%></span></td>
         <td><%=rs("logintimes")%></td>
         <td><%=rs("logintime")%></td>
@@ -88,4 +131,39 @@
 </form>
     </div>
 </fieldset>
+
+<div id="edit_admin" icon="icon-save" style="width: 360px;">
+    <form action="admin_admin_chkedit.asp?action=edit" id="edit_admin_form" method="post">
+    	<table style="border-top: 1px #ccc solid; margin-top: 10px; margin-bottom: 10px;" class="mytable"  border="0" cellspacing="0" cellpadding="0">
+    <tr class="table_ipt_tr">
+        <td width="19%" class="t_r">用户名：</td>
+        <td width="2%">
+        	<input type="hidden" id="edit_admin_aid" name="aid" value="" />
+            <input type="hidden" id="edit_admin_un" name="un" value="xxx" />
+        	&nbsp;
+        </td>
+        <td width="79%" id="edit_acmin_username">&nbsp;</td>
+    </tr>
+    <tr class="table_ipt_tr">
+        <td class="t_r">密码：</td>
+        <td>&nbsp;</td>
+        <td><input type="password" name="password" id="password" class="ipt" /></td>
+    </tr>
+    <tr class="table_ipt_tr">
+        <td class="t_r">重复：</td>
+        <td>&nbsp;</td>
+        <td><input type="password" name="cfmpwd" id="cfmpwd" class="ipt" /></td>
+    </tr>
+    <tr class="table_ipt_tr">
+        <td class="t_r">权限：</td>
+        <td>&nbsp;</td>
+        <td>
+        	<label><input type="radio" name="RadioGroup2" value="Superadmin" id="RadioGroup1_2" />超级管理员</label>
+    	    <label><input type="radio" name="RadioGroup2" value="Normaladmin" id="RadioGroup1_3" />普通录入员</label>
+        </td>
+    </tr>
+	    </table>
+       </form>
+
+</div>
 <!--#include file="admin_common_footer.asp" -->

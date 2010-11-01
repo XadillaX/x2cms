@@ -17,8 +17,8 @@
 <%
 	dim sys_name, sys_ver, sys_web, sys_pubdate, sys_author
 	sys_name = "X2CMS"
-	sys_ver = "1.0 Beta"
+	sys_ver = "V1.0 Beta"
 	sys_web = "http://www.xcoder.in/"
-	sys_pubdate = "2010/11/9"
+	sys_pubdate = "2010-11-9"
 	sys_author = "XadillaX"
 %>
