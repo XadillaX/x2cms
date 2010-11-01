@@ -1,4 +1,11 @@
-﻿<!--#include file="../config.asp" -->
+﻿<%
+	'--------------------------
+	' * 管理登陆
+	' * By XadillaX
+	' * http://xcoder.in
+	'--------------------------
+%>
+<!--#include file="../config.asp" -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

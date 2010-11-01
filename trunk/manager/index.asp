@@ -1,4 +1,11 @@
-﻿<!--#include file="admin_common.asp" -->
+﻿<%
+	'--------------------------
+	' * 管理大厅
+	' * By XadillaX
+	' * http://xcoder.in
+	'--------------------------
+%>
+<!--#include file="admin_common.asp" -->
 <html>
 <head>
 <meta NAME="GENERATOR" Content="Microsoft FrontPage 5.0">
