@@ -1349,3 +1349,4 @@ End Function
 %>
 <!--#include file="core/easp.error.asp"-->
 <!--#include file="core/easp.db.asp"-->
+<!--#include file="core/easp.x2cms.asp"-->

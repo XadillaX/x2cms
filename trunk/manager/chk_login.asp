@@ -27,9 +27,12 @@
 		aid = rs("aid")
 		LoginTime = Now()				' 获取时间
 		LoginIP = realip				' realip是EasyIDE的全局变量
-		result = Easp.db.UR("admin", "aid=" & aid, Array( "logintime:" & LoginTime, "loginip:" & LoginIP ))
+		
+		' 登录信息写入数据库
+		result = Easp.db.UR("admin", "aid=" & aid, Array( "logintime:" & LoginTime, "loginip:" & LoginIP, "logintimes:" & rs("logintimes") + 1 ))
+		
+		' 写入日志
 		if result <> false then
-			' 写入日志
 			Easp.db.AR "admin_log", Array("username:" & Username, "logtext:" & "登录成功。", "time:" & Now(), "ip:" & realip, "right:true")
 			Session(SessionPre & "admin_logined") = true
 			Session(SessionPre & "admin_username") = Username
@@ -39,6 +42,7 @@
 			Session(SessionPre & "admin_type") = rs("superadmin")
 			Easp.RR "index.asp"
 		else
+			SetLog Username, "数据库写入错误。", false
 			Easp.Alert "数据库写入错误！"
 		end if
 	end if
