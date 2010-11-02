@@ -24,6 +24,8 @@ $(function(){
 	/* Init the dialog */
 	$("#edit_admin").dialog();
 	$("#edit_admin").dialog('close');
+	$("#del_admin").dialog();
+	$("#del_admin").dialog('close');
 });
 
 function open_del_dialog(username, aid)
@@ -155,14 +157,14 @@ function open_edit_dialog(username, aid, issuper)
     </div>
 </fieldset>
 
-<div id="del_admin">
+<div id="del_admin" icon="icon-save" style="width: 360px;">
 <form action="admin_admin_chkedit.asp?action=del" id="del_admin_form" method="post">
 <div style="margin: 5px 5px 5px 5px;">确定删除？</div>
 <input type="hidden" id="del_admin_aid" name="aid" value="" />
 </form>
 </div>
 
-<div id="edit_admin" icon="icon-save" style="width: 360px;">
+<div id="edit_admin" icon="icon-save">
     <form action="admin_admin_chkedit.asp?action=edit" id="edit_admin_form" method="post">
     	<table style="border-top: 1px #ccc solid; margin-top: 10px; margin-bottom: 10px;" class="mytable"  border="0" cellspacing="0" cellpadding="0">
     <tr class="table_ipt_tr">
