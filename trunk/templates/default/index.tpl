@@ -5,6 +5,9 @@
 <title>{__webname__} &raquo; {__title__}</title>
 <link href="{__skinpath__}index.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+{#include:b.tpl}
+</style>
 <body>
 	<div id="maindiv">
     	<div id="top">

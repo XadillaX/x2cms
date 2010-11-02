@@ -33,11 +33,11 @@
 			if rs.Eof then exit for
 	%>
     <tr class="table_row <%=iif(i mod 2 = 1, "table_row_clr_1", "table_row_clr_2")%>">
-        <td><%=rs("lid")%></td>
-        <td><%=rs("username")%></td>
-        <td><div style="-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;max-height: 60px; overflow-x: auto; overflow-y: auto; color: <%=iif(rs("right") = true, "#00cc00", " #ff0000")%>; padding: 5px 5px 5px 5px; border: #ddd 1px solid; background: #fff; margin: 2px 2px 2px 2px;"><%=rs("logtext")%></div></td>
-        <td><%=rs("time")%></td>
-        <td><%=rs("ip")%></td>
+        <td width="11%"><%=rs("lid")%></td>
+        <td width="15%"><%=rs("username")%></td>
+        <td width="41%"><div style="word-break: break-all; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;max-height: 60px; overflow-x: auto; overflow-y: auto; color: <%=iif(rs("right") = true, "#00cc00", " #ff0000")%>; padding: 5px 5px 5px 5px; border: #ddd 1px solid; background: #fff; margin: 2px 2px 2px 2px;"><%=rs("logtext")%></div></td>
+        <td width="16%"><%=rs("time")%></td>
+        <td width="17%"><%=rs("ip")%></td>
     </tr>
     <%
 			rs.MoveNext()

@@ -11,7 +11,7 @@
 <meta NAME="GENERATOR" Content="Microsoft FrontPage 5.0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href=style/font.css rel=STYLESHEET type=text/css>
-<title>X2CMS - 后台管理中心</title>
+<title>&copy;<%=sys_name%>&nbsp;<%=sys_ver%> - 后台管理中心</title>
 <script language="JavaScript" type="text/javascript" src="js/open_btn.js"></script>
 <link href="style/font.css" rel="stylesheet" type="text/css">
 <link href="style/link.css" rel="stylesheet" type="text/css">
@@ -64,4 +64,3 @@
 </table>
 </body>
 </html>
-<!--#include file="admin_common_footer.asp" -->

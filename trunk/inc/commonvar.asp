@@ -9,6 +9,8 @@
 	dim result
 	dim Title, Root, Skin, VisCount
 	
+	Easp.Tpl.AspEnable	=	true
+	
 	Title				=	Easp.db.RT("config", "id=1", "webname")
 	Root				=	Easp.db.RT("config", "id=1", "root")
 	Skin				=	Easp.db.RT("config", "id=1", "skin")

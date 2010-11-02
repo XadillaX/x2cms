@@ -82,7 +82,7 @@ $(function(){
                     <td><img src="images/dr_btn.gif" width="63" height="22" onClick="document.form1.submit()" /></td>
                   </tr>
                 </table>
-                  <p style="text-align: center;">X2CMS 1.0 Beta. <a href="http://xcoder.in">xCoder</a> &copy; 2008 - 2011 All rights resvered.<br /></p></td>
+                  <p style="text-align: center;"><%=sys_name%>&nbsp;<%=sys_ver%>. <a href="<%=sys_web%>"><%=sys_author%></a> &copy; 2008 - 2011 All rights resvered.<br /></p></td>
             </tr>
           </table></td>
         <td valign="middle">&nbsp;</td>

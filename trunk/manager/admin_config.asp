@@ -58,6 +58,41 @@
             <span class="hint">*修改浏览量</span>
         </td>
     </tr>
+    <tr class="table_ipt_tr">
+	    <td width="19%" style="text-align: right; font-weight: bold;">&nbsp;</td>
+        <td width="3%">&nbsp;</td>
+	    <td width="78%">&nbsp;
+        </td>
+    </tr>
+    <tr class="table_ipt_tr">
+	    <td width="19%" style="text-align: right; font-weight: bold;">网站标题：</td>
+        <td width="3%">&nbsp;</td>
+	    <td width="78%">
+        	<input class="ipt" type="text" name="webtitle" id="webtitle" value="<%=config_rs("webtitle")%>" />
+            <span class="hint">*修改显示在浏览器标题栏的文字</span>
+        </td>
+    </tr>
+    <tr class="table_ipt_tr">
+	    <td width="19%" style="text-align: right; font-weight: bold;">网站关键字：</td>
+        <td width="3%">&nbsp;</td>
+	    <td width="78%">
+            <textarea id="keyword" name="keyword"><%=config_rs("keyword")%></textarea>
+        </td>
+    </tr>
+    <tr class="table_ipt_tr">
+	    <td width="19%" style="text-align: right; font-weight: bold;">网站描述：</td>
+        <td width="3%">&nbsp;</td>
+	    <td width="78%">
+            <textarea id="description" name="description"><%=config_rs("description")%></textarea>
+        </td>
+    </tr>
+    <tr class="table_ipt_tr">
+	    <td width="19%" style="text-align: right; font-weight: bold;">统计代码：</td>
+        <td width="3%">&nbsp;</td>
+	    <td width="78%">
+            <textarea id="countcode" name="countcode"><%=config_rs("countcode")%></textarea>
+        </td>
+    </tr>
     <tr class="table_btn_tr">
     	<td colspan="4">
         	<input class="btn" type="submit" name="submit" id="submit" value="确认修改" />

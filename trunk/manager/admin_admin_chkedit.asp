@@ -72,6 +72,24 @@
 			SetLog Username, ncode, flag
 			Easp.Alert code
 			
+		case "del"							' 删除管理员
+			' 验证输入合法性
+			id = Easp.CheckForm(Easp.Post("aid:n"), "", 1, "非法提交！")
+			
+			result = Easp.db.DR("admin", "aid=" & id)
+			if result = 0 then
+				code = "数据库错误！"
+				ncode = "删除管理员：数据库错误。"
+				flag = false
+			else
+				code = "管理员删除成功！"
+				ncode = "删除管理员：ID" & id & "成功。"
+				flag = true
+			end if
+			
+			SetLog Username, ncode, flag
+			Easp.Alert code
+			
 		case else
 			Easp.Alert "错误的指令！"
 	end select

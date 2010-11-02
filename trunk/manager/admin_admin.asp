@@ -26,6 +26,28 @@ $(function(){
 	$("#edit_admin").dialog('close');
 });
 
+function open_del_dialog(username, aid)
+{
+	$("#del_admin_aid").val(aid);
+	
+	/* Open dialog */
+	$("#del_admin").dialog({
+		title: '删除管理员 - ' + username,
+		buttons:[{
+			text:'确定',
+			iconCls:'icon-ok',
+			handler:function(){
+				$("#del_admin_form").submit();
+			}
+		},{
+			text:'取消',
+			handler:function(){
+				$('#del_admin').dialog('close');
+			}
+		}]
+	});	
+}
+
 function open_edit_dialog(username, aid, issuper)
 {
 	/* Change the value of text or inputs */
@@ -79,7 +101,8 @@ function open_edit_dialog(username, aid, issuper)
     <tr class="table_row <%=iif(i mod 2 = 1, "table_row_clr_1", "table_row_clr_2")%>">
         <td><%=rs("aid")%></td>
         <td><%=rs("username")%></td>
-        <td><a href="#" onclick="open_edit_dialog('<%=rs("username")%>', '<%=rs("aid")%>', <%=iif(rs("superadmin") = true, "true", "false")%>)">编辑</a> / 删除</td>
+        <td><a href="#" onclick="open_edit_dialog('<%=rs("username")%>', '<%=rs("aid")%>', <%=iif(rs("superadmin") = true, "true", "false")%>)">编辑</a> / 
+        <a href="#" onclick="open_del_dialog('<%=rs("username")%>', '<%=rs("aid")%>')">删除</a></td>
         <td><span class="hint"><%=iif(rs("superadmin") = true, "√", "×")%></span></td>
         <td><%=rs("logintimes")%></td>
         <td><%=rs("logintime")%></td>
@@ -131,6 +154,13 @@ function open_edit_dialog(username, aid, issuper)
 </form>
     </div>
 </fieldset>
+
+<div id="del_admin">
+<form action="admin_admin_chkedit.asp?action=del" id="del_admin_form" method="post">
+<div style="margin: 5px 5px 5px 5px;">确定删除？</div>
+<input type="hidden" id="del_admin_aid" name="aid" value="" />
+</form>
+</div>
 
 <div id="edit_admin" icon="icon-save" style="width: 360px;">
     <form action="admin_admin_chkedit.asp?action=edit" id="edit_admin_form" method="post">
