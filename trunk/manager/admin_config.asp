@@ -13,11 +13,36 @@
 	set config_rs = Easp.db.GRD("config", "id=1")
 %>
 <!--#include file="admin_common_top.asp" -->
+<script type="text/javascript">
+KE.show({
+	id : 'copyright',
+	cssPath : '../js/kindeditor/examples/index.css',
+	afterCreate : function(id) {
+		KE.event.ctrl(document, 13, function() {
+			KE.util.setData(id);
+			document.forms['submit_form'].submit();
+		});
+
+		KE.event.ctrl(KE.g[id].iframeDoc, 13, function() {
+			KE.util.setData(id);
+			document.forms['submit_form'].submit();
+		});
+	},
+	resizeMode : 1,
+	allowPreviewEmoticons : false,
+	allowUpload : false,
+	items : [
+		'fontname', 'fontsize', '|', 'textcolor', 'bgcolor', 'bold', 'italic', 'underline',
+		'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+		'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+});
+
+</script>
 <table class="mytable" border="0" cellspacing="0" cellpadding="0">
 	<tr class="table_title">
     	<td colspan="4">常量设置</td>
     </tr>
-    <form action="admin_config_chk.asp" method="post">
+    <form name="submit_form" action="admin_config_chk.asp" method="post">
 	<tr class="table_ipt_tr">
 	    <td width="19%" style="text-align: right; font-weight: bold;">网站名称：</td>
         <td width="3%">&nbsp;</td>
@@ -76,21 +101,30 @@
 	    <td width="19%" style="text-align: right; font-weight: bold;">网站关键字：</td>
         <td width="3%">&nbsp;</td>
 	    <td width="78%">
-            <textarea id="keyword" name="keyword"><%=config_rs("keyword")%></textarea>
+            <textarea class="normal" id="keyword" name="keyword"><%=config_rs("keyword")%></textarea>
         </td>
     </tr>
     <tr class="table_ipt_tr">
 	    <td width="19%" style="text-align: right; font-weight: bold;">网站描述：</td>
         <td width="3%">&nbsp;</td>
 	    <td width="78%">
-            <textarea id="description" name="description"><%=config_rs("description")%></textarea>
+            <textarea class="normal" id="description" name="description"><%=config_rs("description")%></textarea>
         </td>
     </tr>
     <tr class="table_ipt_tr">
 	    <td width="19%" style="text-align: right; font-weight: bold;">统计代码：</td>
         <td width="3%">&nbsp;</td>
 	    <td width="78%">
-            <textarea id="countcode" name="countcode"><%=config_rs("countcode")%></textarea>
+            <textarea class="normal" id="countcode" name="countcode"><%=config_rs("countcode")%></textarea>
+        </td>
+    </tr>
+    <tr class="table_ipt_tr">
+	    <td width="19%" style="text-align: right; font-weight: bold;">版权信息：</td>
+        <td width="3%">&nbsp;</td>
+	    <td width="78%">
+            <div>
+            	<textarea style="width:700px; height:300px; display: block; visibility:hidden;" id="copyright" name="copyright" rows="10"><%=config_rs("copyright")%></textarea>
+        	</div>
         </td>
     </tr>
     <tr class="table_btn_tr">

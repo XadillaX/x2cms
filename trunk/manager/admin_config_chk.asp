@@ -11,7 +11,7 @@
 	Easp.CheckDataFromA()
 
 	' 读取POST数据
-	dim Pwebname, Proot, Pskin, Pviscount
+	dim Pwebname, Proot, Pskin, Pviscount, Pcopyright
 	dim Pwebtitle, Pkeyword, Pdescription, Pcountcode
 	dim sqlstr, sqlarr
 	Pwebname = Easp.post("webname:s")
@@ -22,8 +22,9 @@
 	Pkeyword = Easp.post("keyword:s")
 	Pdescription = Easp.post("description:s")
 	Pcountcode = Easp.post("countcode:s")
+	Pcopyright = Easp.post("copyright:s")
 	
-	sqlarr = Array("webname:" & Pwebname, "root:" & Proot, "skin:" & Pskin, "viscount:" & Pviscount, "webtitle:" & Pwebtitle, "keyword:" & Pkeyword, "description:" & Pdescription, "countcode:" & Pcountcode)
+	sqlarr = Array("webname:" & Pwebname, "root:" & Proot, "skin:" & Pskin, "viscount:" & Pviscount, "webtitle:" & Pwebtitle, "keyword:" & Pkeyword, "description:" & Pdescription, "countcode:" & Pcountcode, "copyright:" & Pcopyright)
 	
 	' 写入数据
 	if Easp.db.UR("config", "id=1", sqlarr) = 1 then

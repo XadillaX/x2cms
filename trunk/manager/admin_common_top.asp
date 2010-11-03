@@ -10,6 +10,7 @@
 <link href="style/newstyle.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" type="text/javascript" src="../js/easyui/jquery-1.4.2.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+<script charset="utf-8" language="JavaScript" type="text/javascript" src="../js/kindeditor/kindeditor.js"></script>
 <link rel="stylesheet" type="text/css" href="../js/easyui/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="../js/easyui/themes/icon.css">
 </head>

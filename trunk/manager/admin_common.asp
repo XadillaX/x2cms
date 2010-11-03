@@ -37,8 +37,11 @@
 	end if
 	
 	' 如果未登录
-	if Logined = false and PageName <> AdminPath & "index.asp" and PageName <> AdminPath then
-		Easp.db.AR "admin_log", Array("username:NULL", "logtext:" & "未登录用户尝试进入页面：<a href=" & Easp.GetUrl(1) & ">" & Easp.GetUrl(1) & "</a>。", "time:" & Now(), "ip:" & realip)
+	if Logined = false then
+		if PageName <> AdminPath & "index.asp" and PageName <> AdminPath then
+			Easp.db.AR "admin_log", Array("username:NULL", "logtext:" & "未登录用户尝试进入页面：<a href=" & Easp.GetUrl(1) & ">" & Easp.GetUrl(1) & "</a>。", "time:" & Now(), "ip:" & realip)
+		end if
+		
 		Easp.AlertUrl "你尚未登录！", "login.asp"
 	end if
 	

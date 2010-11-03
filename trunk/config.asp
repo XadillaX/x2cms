@@ -10,6 +10,7 @@
 <%
 	Easp.Use "tpl"
 	Easp.Use "Xml"
+	Easp.Use "Fso"
 	
 	dim WebPath, DBFile, SkinPath, VCodeSession, SessionPre, AdminPath
 	WebPath		=	"/"											' 网站绝对路径

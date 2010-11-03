@@ -6,7 +6,7 @@
 	' * http://xcoder.in
 	'--------------------------
 	
-	Easp.Tpl.Load "index.tpl"
+	Easp.Tpl.Load tpl_index
 	CommonTags()
 	
 	Easp.Tpl "__title__", "首页"

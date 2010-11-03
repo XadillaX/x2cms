@@ -31,16 +31,21 @@
 	<ul>
     	<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="main.asp" target="BoardList">管理首页</a></li>
 		<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_config.asp" target="BoardList">站点配置</a></li>
+        <li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_contact.asp" target="BoardList">联系资料</a></li>
         <li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_log.asp" target="BoardList">操作日志</a></li>
 	</ul>
     <h3>管理员管理</h3>
 	<ul>
 		<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_admin.asp" target="BoardList">管理员列表</a></li>
 	</ul>
-    <h6>艾克视图工作室 <%=sys_pubdate%></h6>
 	<%
 		end if
 	%>
+    <h3>内容管理</h3>
+	<ul>
+    	<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_type.asp" target="BoardList">栏目管理</a></li>
+	</ul>
+    <h6>艾克视图工作室 <%=sys_pubdate%></h6>
 </div>
 </body>
 </html>
