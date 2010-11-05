@@ -27,3 +27,6 @@
 /* fieldset */
 .admin_fieldset { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: 1px solid #ccc; width: 98%; margin-left: auto; margin-right: auto; }
 .admin_legend { color:#d80000; font-size:14px; margin-left: 5px; font-weight:bold; }
+
+.ke-toolbar-outer td { height: auto; }
+.ke-container { margin-top: 5px; margin-bottom: 5px; }

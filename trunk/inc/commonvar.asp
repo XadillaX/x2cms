@@ -5,6 +5,10 @@
 	' * http://xcoder.in
 	'--------------------------
 	
+	' 常用辅助常量
+	dim endl
+	endl = "<br />"
+	
 	' 模板默认设置
 	dim tpl_index, tpl_contact
 	tpl_index = "index.tpl"

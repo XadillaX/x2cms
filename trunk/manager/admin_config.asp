@@ -16,7 +16,7 @@
 <script type="text/javascript">
 KE.show({
 	id : 'copyright',
-	cssPath : '../js/kindeditor/examples/index.css',
+	cssPath : '../js/kindeditor/skins/default.css',
 	afterCreate : function(id) {
 		KE.event.ctrl(document, 13, function() {
 			KE.util.setData(id);
@@ -31,10 +31,6 @@ KE.show({
 	resizeMode : 1,
 	allowPreviewEmoticons : false,
 	allowUpload : false,
-	items : [
-		'fontname', 'fontsize', '|', 'textcolor', 'bgcolor', 'bold', 'italic', 'underline',
-		'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-		'insertunorderedlist', '|', 'emoticons', 'image', 'link']
 });
 
 </script>
@@ -123,7 +119,7 @@ KE.show({
         <td width="3%">&nbsp;</td>
 	    <td width="78%">
             <div>
-            	<textarea style="width:700px; height:300px; display: block; visibility:hidden;" id="copyright" name="copyright" rows="10"><%=config_rs("copyright")%></textarea>
+            	<textarea style="width: 700px; height: 300px;" id="copyright" name="copyright" rows="8" cols="100"><%=config_rs("copyright")%></textarea>
         	</div>
         </td>
     </tr>

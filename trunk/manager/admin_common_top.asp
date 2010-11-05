@@ -3,11 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><%=PageTitle%></title>
+
 <link href="style/link.css" rel="stylesheet" type="text/css" />
 <link href="style/font.css" rel="stylesheet" type="text/css" />
 <link href="style/base.css" rel="stylesheet" type="text/css" />
 <link href="style/user.css" rel="stylesheet" type="text/css" />
 <link href="style/newstyle.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../js/json2.js"></script>
 <script language="JavaScript" type="text/javascript" src="../js/easyui/jquery-1.4.2.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
 <script charset="utf-8" language="JavaScript" type="text/javascript" src="../js/kindeditor/kindeditor.js"></script>

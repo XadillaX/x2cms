@@ -149,7 +149,7 @@ function open_edit_dialog(username, aid, issuper)
     </tr>
     	    <tr class="table_ipt_tr"> </tr>
     	    <tr class="table_btn_tr">
-    	        <td colspan="3"><input class="btn" type="submit" name="submit" id="submit" value="确认修改" />
+    	        <td colspan="3"><input class="btn" type="submit" name="submit" id="submit" value="确认添加" />
             <input class="btn" type="reset" name="reset" id="reset" value="重新填写" /></td>
    	        </tr>
 	    </table>

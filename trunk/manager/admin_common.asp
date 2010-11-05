@@ -29,7 +29,7 @@
 		dim TempUsername, NowTime
 		TempUsername = LCase(Easp.db.RT("admin", "username='" & Username & "'", "username"))
 		aid = Easp.db.RT("admin", "username='" & Username & "'", "aid")
-		if TempUsername <> Username or DateDiff("s", Now(), Session(SessionPre & "admin_acttime")) > 3600 then
+		if TempUsername <> Username or DateDiff("s", Now(), Session(SessionPre & "admin_acttime")) > AdminMaxTime then
 			Logined = false
 		end if
 	else
