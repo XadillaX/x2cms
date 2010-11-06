@@ -18,6 +18,8 @@
 <script type="text/javascript">
 /* Initialze */
 $(function(){
+	$("#loading_hint").css("left", (document.body.clientWidth - 200) / 2);
+	
 	$("#del_type").dialog();
 	$("#del_type").dialog('close');
 	$("#edit_type").dialog();
@@ -49,6 +51,8 @@ $(function(){
 /* Edit Dialog function */
 function type_edit(tid)
 {
+	$("#loading_hint").show("normal");
+	
 	var json_obj;
 	$.get(
 		"admin_json.asp?action=type_get_info&tid=" + tid + "&seed=" + Math.random(),
@@ -57,6 +61,7 @@ function type_edit(tid)
 			var row = json_obj.type[0];
 			
 			$("#ipt_edit_tid").val(row.tid);
+			$("#ipt_edit_tpl").val(row.tpl);
 			$("#ipt_edit_count").val(row.count);
 			$("#ipt_edit_type").val(row.type);
 			$("#ipt_edit_typeurl").val(row.typeurl);
@@ -79,6 +84,8 @@ function type_edit(tid)
 					}
 				}]
 			});	
+			
+			$("#loading_hint").hide("normal");
 		}
 	);
 }
@@ -86,6 +93,7 @@ function type_edit(tid)
 /* Edit Dialog function */
 function type_edit_page(tid)
 {
+	$("#loading_hint").show("normal");
 	var json_obj;
 	$.get(
 		"admin_json.asp?action=type_get_info&tid=" + tid + "&seed=" + Math.random(),
@@ -94,6 +102,7 @@ function type_edit_page(tid)
 			
 			var row = json_obj.type[0];
 			
+			$("#ipt_edit_tpl_page").val(row.tpl != null ? row.tpl : "");
 			KE.html('ipt_edit_pagecode_page', row.pagecode != null ? row.pagecode : "");
 			$("#ipt_edit_tid_page").val(row.tid);
 			$("#ipt_edit_count_page").val(row.count);
@@ -120,6 +129,8 @@ function type_edit_page(tid)
 					}
 				}]
 			});	
+			
+			$("#loading_hint").hide("normal");
 		}
 	);
 }
@@ -153,6 +164,10 @@ function type_del(tid, type, count)
 	});	
 }
 </script>
+
+<div class="hint_div" id="loading_hint" style="top: 300px; display: none;">
+	<img src="images/loading.gif" width="16" height="16" /> 载入中...
+</div>
 
 <table class="mytable" border="0" cellspacing="0" cellpadding="0">
     <tr class="table_title">
@@ -229,6 +244,11 @@ function type_del(tid, type, count)
     	    <label><input type="radio" name="page" value="page" id="page_radio" />单页</label>
         </td>
     </tr>
+    <tr class="table_ipt_tr">
+        <td class="t_r">模板文件：</td>
+        <td>&nbsp;</td>
+        <td><input type="text" name="tpl" id="tpl" class="ipt" /> <span class="hint">*留空为默认</span></td>
+    </tr>
     	    <tr class="table_ipt_tr"> </tr>
     	    <tr class="table_btn_tr">
     	        <td colspan="3"><input class="btn" type="submit" name="submit" id="submit" value="确认添加" />
@@ -278,6 +298,11 @@ function type_del(tid, type, count)
             <td>&nbsp;</td>
             <td><input type="text" name="ord" id="ipt_edit_ord" class="ipt" /></td>
         </tr>
+        <tr class="table_ipt_tr">
+        <td class="t_r">模板文件：</td>
+        <td>&nbsp;</td>
+        <td><input type="text" name="tpl" id="ipt_edit_tpl" class="ipt" /> <span class="hint">*留空为默认</span></td>
+    </tr>
 
 	</table>
 </form>
@@ -315,14 +340,18 @@ function type_del(tid, type, count)
             <td><input type="text" name="ord" id="ipt_edit_ord_page" class="ipt" /></td>
         </tr>
         <tr class="table_ipt_tr">
+        <td class="t_r">模板文件：</td>
+        <td>&nbsp;</td>
+        <td><input type="text" name="tpl" id="ipt_edit_tpl_page" class="ipt" /> <span class="hint">*留空为默认</span></td>
+    </tr>
+        <tr class="table_ipt_tr">
             <td class="t_r">内容：</td>
             <td>&nbsp;</td>
-            <td><textarea name="pagecode" id="ipt_edit_pagecode_page" style="width: 550px; height: 300px;"></textarea></td>
+            <td><textarea name="pagecode" id="ipt_edit_pagecode_page" style="width: 550px; height: 250px;"></textarea></td>
         </tr>
 
 	</table>
 </form>
 </div>
-
 
 <!--#include file="admin_common_footer.asp" -->

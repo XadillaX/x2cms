@@ -15,10 +15,13 @@
 		case "add"										' 增加栏目
 			' 验证输入合法性
 			ptype = Easp.CheckForm(Easp.Post("type:s"), "", 1, "请输入栏目名称")
+			ptpl = Easp.CheckForm(Easp.Post("tpl:s"), "", 0, "请正确模板！")
 			ptypeurl = Easp.CheckForm(Easp.Post("typeurl:s"), "english", 1, "URL的GET值只允许是英文！")
 			pfather = Easp.CheckForm(Easp.Post("father:n"), "number", 1, "父路径不正确！")
 			ppage = Easp.Post("page:s")
 			pord = Easp.CheckForm(Easp.Post("ord:n:0"), "number", 1, "错误的排序！")
+			
+			if not Easp.fso.IsFile(WebPath & SkinPath & ptpl) and ptpl <> "" then Easp.Alert "此模板不存在！" & ptpl
 
 			result = Easp.db.RT("type", Array("typeurl:" & ptypeurl), "typeurl")
 			if result <> "" then
@@ -31,7 +34,7 @@
 			end if
 			
 			' 写入数据库
-			result = Easp.db.AR("type", Array("type:" & ptype, "typeurl:" & ptypeurl, "page:" & iif(ppage = "page", true, false), "ord:" & pord, "father:" & pfather))
+			result = Easp.db.AR("type", Array("tpl:" &ptpl, "type:" & ptype, "typeurl:" & ptypeurl, "page:" & iif(ppage = "page", true, false), "ord:" & pord, "father:" & pfather))
 			if result = 0 then 
 				code = "数据库错误！"
 				ncode = "添加栏目：数据库错误。"
@@ -54,6 +57,9 @@
 			pord = Easp.CheckForm(Easp.Post("ord:n"), "", 1, "非法提交！")
 			pcount = Easp.CheckForm(Easp.Post("count:n"), "", 1, "非法提交！")
 			ppagecode = Easp.CheckForm(Easp.Post("pagecode:s"), "", 1, "非法提交！")
+			ptpl = Easp.CheckForm(Easp.Post("tpl:s"), "", 0, "请正确模板！")
+			
+			if not Easp.fso.IsFile(WebPath & SkinPath & ptpl) and ptpl <> "" then Easp.Alert "此模板不存在！" & ptpl
 			
 			' 验证自递归目录
 			if ptid = pfather then Easp.Alert "不能成为自己的子目录！"
@@ -89,7 +95,7 @@
 			wend
 			
 			' 修改此栏目
-			Easp.db.UR "type", "tid=" & ptid, Array("pagecode:" & ppagecode, "type:" & ptype, "father:" & pfather, "typeurl:" & ptypeurl, "ord:" & pord)
+			Easp.db.UR "type", "tid=" & ptid, Array("tpl:" & ptpl, "pagecode:" & ppagecode, "type:" & ptype, "father:" & pfather, "typeurl:" & ptypeurl, "ord:" & pord)
 			SetLog Username, "修改栏目""" & ptype & """成功！", true
 			Easp.AlertUrl "修改栏目""" & ptype & """成功！", "admin_type.asp?seed=" & now()
 			
