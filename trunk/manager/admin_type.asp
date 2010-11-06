@@ -91,15 +91,18 @@ function type_edit_page(tid)
 		"admin_json.asp?action=type_get_info&tid=" + tid + "&seed=" + Math.random(),
 		function(data){
 			json_obj = eval("(" + data + ")");
+			
 			var row = json_obj.type[0];
 			
+			KE.html('ipt_edit_pagecode_page', row.pagecode != null ? row.pagecode : "");
 			$("#ipt_edit_tid_page").val(row.tid);
 			$("#ipt_edit_count_page").val(row.count);
 			$("#ipt_edit_type_page").val(row.type);
 			$("#ipt_edit_typeurl_page").val(row.typeurl);
 			$("#ipt_edit_ord_page").val(row.ord);
 			$("#edit_type_page .sel_" + row.father).attr("selected", "selected");
-			KE.html('ipt_edit_pagecode_page', row.pagecode);
+			
+			//alert(data);
 			
 			/* Open dialog */
 			$("#edit_type_page").dialog({

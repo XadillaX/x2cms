@@ -10,9 +10,11 @@
 	endl = "<br />"
 	
 	' 模板默认设置
-	dim tpl_index, tpl_contact
+	dim tpl_index, tpl_contact, tpl_single_page, tpl_art_list
 	tpl_index = "index.tpl"
 	tpl_contact = "contact.tpl"
+	tpl_single_page = "single.tpl"
+	tpl_art_list = "artlist.tpl"
 	
 	dim i, j, k
 	dim result
