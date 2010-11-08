@@ -13,6 +13,9 @@
 	Easp.Use "Fso"
 	Easp.Use "List"
 	
+	Easp.Tpl.TagUnknown			=	"remove"
+	Easp.Tpl.AspEnable			=	True
+	
 	dim WebPath, DBFile, SkinPath, VCodeSession, SessionPre, AdminPath, AdminMaxTime, UploadPath, UploadMax, UploadExt
 	WebPath		=	"/"											' 网站绝对路径
 	DBFile		=	"data/database.mdb"							' 数据库相对路径

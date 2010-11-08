@@ -93,6 +93,7 @@
 	
 	sub AdminType_LineAction(tid, sField, operator)
 		dim sqlstr
+		' echo tid
 		while cstr(tid) <> cstr(-1)
 			sqlstr = "update [type] set [" & sField & "] = [" & sField & "] " & operator & " where tid=" & tid
 			Easp.db.Exec sqlstr
@@ -101,7 +102,7 @@
 		wend
 	end sub
 	
-
+' 截取字符串
 function gotTopic(str,strlen)
  if str="" then
   gotTopic=""

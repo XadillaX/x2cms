@@ -8,5 +8,7 @@
 	' 在模板中可直接用 '<%=tpl_author%_防ASP标签混乱分割线_>
 	
 	'tpl_index		=	"index.tpl"					' 注释此句默认首页模板为index.tpl，可自行修改为自己的默认模板
-	'tpl_contact	=	"contact.tpl"				' 注释此句默认联系信息模板为contact.tpl，可自行修改为自己的
+	'tpl_contact	=	"contact.tpl"				' 注释此句默认联系信息模板为contact.tpl，可自行修改为自己的默认模板
+	'tpl_single_page=	"single.tpl"				' 注释此句默认单页模板为single.tpl，可自行修改为自己的默认模板
+	'tpl_art_list	=	"artlist.tpl"				' 注释此句默认文章列表模板为artlist.tpl，可自行修改为自己的模板
 %>

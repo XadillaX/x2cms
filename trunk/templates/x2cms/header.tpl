@@ -19,16 +19,15 @@
 	<div class="shell">
 		
 		<!-- Logo -->
-		<h1 id="logo"><a href="#">Company Name - simple solutions</a></h1>
+		<h1 id="logo"><a href="#">{__webtitle__}</a></h1>
 		<!-- End Logo -->
 		
 		<!-- Navigation -->
 		<div id="navigation">
 			<ul>
-			    <li><a href="index.asp">Home</a></li>
-			    <li><a href="#">About</a></li>
-			    <li><a href="#">Services</a></li>
-			    <li><a href="contact.asp">Contact</a></li>
+			    <li><a href="index.asp">首页</a></li>
+                {#:__mainnav__}<li><a href="{__mainnav__.url}">{__mainnav__.type}</a></li>{/#:__mainnav__}
+			    <li><a href="contact.asp">联系</a></li>
 			</ul>
 		</div>
 		<!-- End Navigation -->

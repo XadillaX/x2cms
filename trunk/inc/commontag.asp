@@ -34,5 +34,19 @@
 		Easp.Tpl "__qq__", Contact_Info("cqq")				' 公司邮编
 		Easp.Tpl "__qqname__", Contact_Info("cqqname")		' 客服QQ
 		Easp.Tpl "__address__", Contact_Info("caddress")	' 公司地址
+		
+		' 主栏目
+		dim type_rs
+		set type_rs = Easp.db.GR("type", "father=-1", "ord asc")
+		while not type_rs.EOF
+			Easp.Tpl "__mainnav__.type", type_rs("type")
+			Easp.Tpl "__mainnav__.count", type_rs("count")
+			Easp.Tpl "__mainnav__.ord", type_rs("ord")
+			Easp.Tpl "__mainnav__.pagecode", type_rs("pagecode")
+			Easp.Tpl "__mainnav__.url", Root & "\?p=" & type_rs("typeurl")
+			
+			type_rs.MoveNext
+			Easp.Tpl.Update "__mainnav__"
+		wend
 	End Sub
 %>

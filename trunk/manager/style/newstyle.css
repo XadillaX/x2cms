@@ -21,6 +21,7 @@
 .table_row td { border-bottom: #ccc 1px solid; height: 20px; font-size: 12px; text-align: center; }
 	.table_row_clr_1 { background: #efefef; }
 	.table_row_clr_2 { background: #fefefe; }
+	.table_content_cyc { background: #FFE8BB; }
 	
 .hr { height: 0px; border-top: 1px solid #0CF; border-bottom: 1px solid #09F; width: 98%; margin-left: auto; margin-right: auto; margin-top: 3px; margin-bottom: 3px; }
 

@@ -6,3 +6,6 @@
 
 </body>
 </html>
+<%
+	set Easp = nothing
+%>
