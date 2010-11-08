@@ -1,0 +1,77 @@
+;不要删除或修改本文件，否则会导致无法卸载！
+;Do NOT remove or modify this file, otherwise will lead to uninstall failed!
+7|1|0
+7|9|0
+1|C:\Program Files\95599 Certificate Tools\WatchData
+1|C:\Program Files\95599 Certificate Tools\WatchData
+1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2
+1|C:\ProgramData\Microsoft\Windows\Start Menu\Programs\中国农业银行网上银行证书工具软件\握奇
+1|C:\Program Files\95599 Certificate Tools\WatchData
+1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2
+1|C:\ProgramData\Microsoft\Windows\Start Menu\Programs\中国农业银行网上银行证书工具软件\握奇
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\ABC Management Tool help_CN.chm
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\ABC Management Tool help_EN.chm
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\clrcert.exe
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\logo.bmp
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\ProviderName.ini
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\recfull.ico
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WatchSafe.ini
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\ABCUsertool.exe
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDCertM_ABC.exe
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDKeyMonitorABC.exe
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\RegTrustedSite.exe
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\FindProcess.exe
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\TokenMgr.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\UIResC3.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\UIResE3.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\UIResT3.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDAlg.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDCSP03.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\wdcspui.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDEvent.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\wdkmgr.dll
+2|1|C:\Windows\system32\WD_NDP11_ABC.dll
+2|0|C:\Windows\system32\abcPrintCtl4RA.dll
+2|0|C:\Windows\system32\CEA_Crypt.dll
+2|0|C:\Windows\system32\NetSign.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\wdpkcs.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\wdsafe3.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\wdsafe3.sig
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\abchWTDT41.dll
+2|1|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\abcsWTDT41.dll
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\ABC.ico
+2|1|C:\Program Files\95599 Certificate Tools\WatchData\WD_Uninstall.exe
+7|2|C:\Program Files\95599 Certificate Tools\WatchData\logo.bmp
+7|3|C:\Program Files\95599 Certificate Tools\WatchData\ABC.ico
+3|1|C:\ProgramData\Microsoft\Windows\Start Menu\Programs\中国农业银行网上银行证书工具软件\握奇\卸载.lnk
+3|1|C:\Users\Public\Desktop\中国农业银行网上银行证书工具.lnk
+3|1|C:\ProgramData\Microsoft\Windows\Start Menu\Programs\中国农业银行网上银行证书工具软件\握奇\管理工具.lnk
+4|1|1|K|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Defaults\Provider|ABC SAFE CSP v3.2
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Defaults\Provider\ABC SAFE CSP v3.2|Image Path|($Dir_in_System)wdsafe3.dll
+4|1|1|B|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Defaults\Provider\ABC SAFE CSP v3.2|Signature|($Read_From_File)|csp3.0\wdsafe3.sig
+4|1|1|D|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Defaults\Provider\ABC SAFE CSP v3.2|Type|1
+4|1|1|K|HKEY_LOCAL_MACHINE\SOFTWARE|WatchData
+4|1|1|K|HKEY_LOCAL_MACHINE\SOFTWARE\WatchData|WatchSAFE
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\WatchData\WatchSAFE|Version|3.2.1.1
+4|1|0|K|HKEY_LOCAL_MACHINE\SOFTWARE|ABChina
+4|1|0|K|HKEY_LOCAL_MACHINE\SOFTWARE\ABChina|CertDllConfig
+4|1|1|K|HKEY_LOCAL_MACHINE\SOFTWARE\ABChina\CertDllConfig|WTDT_41
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\ABChina\CertDllConfig\WTDT_41|ABCCtrlEdition|3.2.1.1
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\ABChina\CertDllConfig\WTDT_41|ABCHardCtrlPath|($Dir_in_System)abchWTDT41.dll
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\ABChina\CertDllConfig\WTDT_41|ABCSoftCtrlPath|($Dir_in_System)abcsWTDT41.dll
+4|1|1|D|HKEY_LOCAL_MACHINE\SOFTWARE\ABChina\CertDllConfig\WTDT_41|ABCMID|41
+4|1|1|K|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall|{68A58E46-B890-470C-8889-9AEFBFC35349}
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{68A58E46-B890-470C-8889-9AEFBFC35349}|DisplayIcon|"C:\Program Files\95599 Certificate Tools\WatchData\ABC.ico"
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{68A58E46-B890-470C-8889-9AEFBFC35349}|DisplayName|中国农业银行网上银行证书工具
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{68A58E46-B890-470C-8889-9AEFBFC35349}|DisplayVersion|3.2.1.1
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{68A58E46-B890-470C-8889-9AEFBFC35349}|UninstallString|"C:\Program Files\95599 Certificate Tools\WatchData\WD_Uninstall.exe"
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{68A58E46-B890-470C-8889-9AEFBFC35349}|Publisher|ABC
+4|1|1|S|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{68A58E46-B890-470C-8889-9AEFBFC35349}|URLInfoAbout|http://www.95599.cn
+6|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDKeyMonitorABC.exe -i
+6|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\RegTrustedSite.exe -i
+7|4|1|wdcertm_abc|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDCertM_ABC.exe
+8|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\RegTrustedSite.exe -u
+8|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\WDKeyMonitorABC.exe -u
+8|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\clrcert.exe
+8|C:\Windows\system32\ABC\ABC SAFE CSP v3.2\FindProcess.exe
+A|1|ABCMonitor|1|10000|40001|0

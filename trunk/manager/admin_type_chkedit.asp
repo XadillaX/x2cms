@@ -56,7 +56,7 @@
 			ptypeurl = Easp.CheckForm(Easp.Post("typeurl:s"), "", 1, "非法提交！")
 			pord = Easp.CheckForm(Easp.Post("ord:n"), "", 1, "非法提交！")
 			pcount = Easp.CheckForm(Easp.Post("count:n"), "", 1, "非法提交！")
-			ppagecode = Easp.CheckForm(Easp.Post("pagecode:s"), "", 1, "非法提交！")
+			ppagecode = Easp.CheckForm(Easp.Post("pagecode:s"), "", 0, "非法提交！")
 			ptpl = Easp.CheckForm(Easp.Post("tpl:s"), "", 0, "请正确模板！")
 			
 			if not Easp.fso.IsFile(WebPath & SkinPath & ptpl) and ptpl <> "" then Easp.Alert "此模板不存在！" & ptpl

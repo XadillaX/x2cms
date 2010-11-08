@@ -32,7 +32,6 @@ KE.show({
 	allowPreviewEmoticons : false,
 	allowUpload : false,
 });
-
 </script>
 <table class="mytable" border="0" cellspacing="0" cellpadding="0">
 	<tr class="table_title">

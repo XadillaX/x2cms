@@ -21,7 +21,7 @@
 		rst = rst & "<td width='35%' valign='middle'>"
 		
 		for i = 1 to lay - 1
-			rst = rst & "<span class='fl'>┃&nbsp;&nbsp;</span>"
+			rst = rst & "<span class='fl'>┇&nbsp;&nbsp;</span>"
 		next
 		if lay <> 0 then rst = rst & "<span class='fl'>" & lay & "__pendding__━&nbsp;</span>"
 		
@@ -46,9 +46,9 @@
 			type_rs.MoveNext()
 			
 			if not type_rs.EOF then
-				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┣")
+				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┇")
 			else
-				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┗")
+				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┇")
 			end if
 		wend
 		
@@ -61,14 +61,10 @@
 		dim i, cnt : cnt = 0
 		dim rst
 		
-		rst = rst & "<option count=" & rs("count") & " class='sel_" & rs("tid") & "' " & iif(rs("tid") = selected, "selected", "") & " value='" & rs("tid") & "'>"
+		rst = rst & "<!--" & selected & rs("tid") & "--><option count=" & rs("count") & " class='sel_" & rs("tid") & "' " & iif(cstr(rs("tid")) = cstr(selected), "selected", "") & " value='" & rs("tid") & "'>"
 		
-		if lay <> 1 then
-			rst = rst & "&nbsp;&nbsp;&nbsp;"
-		end if
-		
-		for i = 1 to lay - 2
-			rst = rst & "┃&nbsp;&nbsp;"
+		for i = 1 to lay - 1
+			rst = rst & "┇&nbsp;&nbsp;"
 		next
 		if lay <> 0 then rst = rst & "" & lay & "__pendding__━&nbsp;"
 		
@@ -84,9 +80,9 @@
 			type_rs.MoveNext()
 			
 			if not type_rs.EOF then
-				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┣")
+				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┇")
 			else
-				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┗")
+				rst = str_replace("(" & lay + 1 & "__pendding__)", rst, "┇")
 			end if
 		wend
 		

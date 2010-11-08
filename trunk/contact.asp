@@ -1,4 +1,4 @@
-<!--#include virtual="config.asp" -->
+<!--#include file="config.asp" -->
 <%
 	'--------------------------
 	' * 首页文件
