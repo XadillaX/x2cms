@@ -44,6 +44,7 @@
     <h3>内容管理</h3>
 	<ul>
     	<li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_type.asp" target="BoardList">栏目管理</a></li>
+        <li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_content_list.asp" target="BoardList">内容列表</a></li>
         <li><img src="images/icon/arrow_136.gif" alt="" width="9" height="9" class="small_icon"/> <a href="admin_content_content.asp?action=add" target="BoardList">内容添加</a></li>
 	</ul>
     <h6>艾克视图工作室 <%=sys_pubdate%></h6>

@@ -100,4 +100,31 @@
 			tid = Easp.db.RT("type", "tid=" & tid, "father")
 		wend
 	end sub
+	
+
+function gotTopic(str,strlen)
+ if str="" then
+  gotTopic=""
+  exit function
+ end if
+ dim l,t,c, i
+ str=replace(replace(replace(replace(str,"&nbsp;"," "),"&quot;",chr(34)),"&gt;",">"),"&lt;","<")
+ l=len(str)
+ t=0
+ for i=1 to l
+  c=Abs(Asc(Mid(str,i,1)))
+  if c>255 then
+   t=t+2
+  else
+   t=t+1
+  end if
+  if t>=strlen then
+   gotTopic=left(str,i) & "..."
+   exit for
+  else
+   gotTopic=str
+  end if
+ next
+ gotTopic=replace(replace(replace(replace(gotTopic," ","&nbsp;"),chr(34),"&quot;"),">","&gt;"),"<","&lt;")
+end function
 %>

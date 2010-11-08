@@ -11,6 +11,7 @@
 	Easp.Use "tpl"
 	Easp.Use "Xml"
 	Easp.Use "Fso"
+	Easp.Use "List"
 	
 	dim WebPath, DBFile, SkinPath, VCodeSession, SessionPre, AdminPath, AdminMaxTime, UploadPath, UploadMax, UploadExt
 	WebPath		=	"/"											' 网站绝对路径
