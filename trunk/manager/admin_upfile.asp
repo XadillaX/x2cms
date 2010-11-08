@@ -82,7 +82,10 @@ select case upfile.isErr
 		'==================================
 		'代码检测结束
 		'==================================
-		response.Write "<font color=green>上传成功！</font>文件路径 "&WebPath&updir2&upfile.newfilename &"&nbsp;&nbsp;[<a href='admin_upload.asp'>继续上传</a>]"
+		'dim last_path : set last_path = WebPath&updir2&upfile.newfilename
+		response.Write "<font color=green>上传成功！</font>文件路径 "&WebPath&updir2&upfile.newfilename&"&nbsp;&nbsp;[<a href='admin_upload.asp'>继续上传</a>]"
+		
+		SetLog Username, "文件 <a href=""" & WebPath&updir2&upfile.newfilename & """>" &WebPath&updir2&upfile.newfilename& "</a> 上传成功。", true
 end select
 set upfile=nothing
 Function GetFilePath(FullPath,str)

@@ -15,7 +15,7 @@
 	set root_rs = Easp.db.GR("type", "father=-1", "ord asc")
 	
 	if action = "add" then
-		tid = Easp.Get("type:n")
+		tid = Easp.Get("tid:n")
 		' echo tid
 	end if
 %>
@@ -55,6 +55,7 @@ KE.show({
         <td width="3%">&nbsp;</td>
 	    <td width="78%">
         	<input class="ipt" type="text" name="title" id="title" value="<%=iif(action="edit", title, "")%>" />
+			<input type="hidden" name="titlecolor" value="#ff0000" />
             <span class="hint">*请输入文章标题</span>
         </td>
     </tr>

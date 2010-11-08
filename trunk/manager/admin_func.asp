@@ -28,6 +28,8 @@
 		rst = rst & "<div class='fl' style='text-align: left;'>[<input style='border-bottom: 1px solid #000;' type='text' name='type' value='" & rs("type") & "' />]</div><div class='cl'></div></td>"
 		
 		rst = rst & "<td width='15%' valign='middle'>"
+		rst = rst & "<input onclick=""GoURL('admin_content_content.asp?action=add&tid=" & rs("tid") & "')"" style='border: none; cursor: pointer; background: none; color: #ff7800;' value='添加' type='button' />"
+		rst = rst & "/"
 		rst = rst & "<input onclick=""" & iif(not rs("page"), "type_edit", "type_edit_page") & "('" & rs("tid") & "')"" style='border: none; cursor: pointer; background: none; color: #ff7800;' value='编辑' type='button' />"
 		rst = rst & "/" 
 		rst = rst & "<input onclick=""type_del('" & rs("tid") & "', '" & rs("type") & "', '" & rs("count") & "');"" style='border: none; cursor: pointer; background: none; color: #ff7800;' value='删除' type='button' />"
@@ -88,4 +90,14 @@
 		
 		AdminType_GetThisType_Select = rst
 	end function
+	
+	sub AdminType_LineAction(tid, sField, operator)
+		dim sqlstr
+		while cstr(tid) <> cstr(-1)
+			sqlstr = "update [type] set [" & sField & "] = [" & sField & "] " & operator & " where tid=" & tid
+			Easp.db.Exec sqlstr
+			
+			tid = Easp.db.RT("type", "tid=" & tid, "father")
+		wend
+	end sub
 %>
