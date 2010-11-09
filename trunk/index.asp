@@ -6,12 +6,14 @@
 	' * http://xcoder.in
 	'--------------------------
 	
-	dim tid
+	dim tid, action
+	action = Easp.Get("p:s")
 
-	if Easp.Get("p:s") = "" then
+	if action = "" then
 		Easp.Tpl.Load tpl_index
 		Easp.Tpl "__title__", "首页"
 	else
+		' 获取页面信息
 		dim type_rs
 		set type_rs = Easp.db.GRD("type", "typeurl='" & Easp.CheckForm(Easp.Get("p:s"), "", 1, "非法参数！") & "'")
 		
@@ -60,6 +62,9 @@
 			set art_list = get_art_list_by_page(type_rs("tid"), DefaultPageSize)
 			art_list_pager = Easp.db.GetPager("default")
 			' echo art_list_pager
+			
+			' 特有标签
+			Easp.Tpl "__title__", type_rs("type")
 		else
 			Easp.Alert "404错误：页面不存在！"
 		end if

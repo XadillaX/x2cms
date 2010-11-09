@@ -185,7 +185,7 @@ function type_del(tid, type, count)
 				echo AdminType_GetThisType(rs, 0)
 			rs.MoveNext()
 		next
-		rs.MoveFirst()
+		if Easp.Has(rs) then rs.MoveFirst()
 	%>
 </table>
 <div class="hr"></div>

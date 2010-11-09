@@ -9,12 +9,8 @@
 <!--#include file="inc/easyide.asp" -->
 <%
 	Easp.Use "tpl"
-	Easp.Use "Xml"
 	Easp.Use "Fso"
 	Easp.Use "List"
-	
-	Easp.Tpl.TagUnknown			=	"remove"
-	Easp.Tpl.AspEnable			=	True
 	
 	dim WebPath, DBFile, SkinPath, VCodeSession, SessionPre, AdminPath, AdminMaxTime, UploadPath, UploadMax, UploadExt
 	dim DefaultPageSize

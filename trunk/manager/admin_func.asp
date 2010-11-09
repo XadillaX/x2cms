@@ -28,6 +28,8 @@
 		rst = rst & "<div class='fl' style='text-align: left;'>[<input style='border-bottom: 1px solid #000;' type='text' name='type' value='" & rs("type") & "' />]</div><div class='cl'></div></td>"
 		
 		rst = rst & "<td width='15%' valign='middle'>"
+		rst = rst & "<a style=""color: #ff7800;"" href=""" & Root & "/?p=" & rs("typeurl") & """ target=""_blank"">前往</a>"
+		rst = rst & "/"
 		rst = rst & "<input onclick=""GoURL('admin_content_content.asp?action=add&tid=" & rs("tid") & "')"" style='border: none; cursor: pointer; background: none; color: #ff7800;' value='添加' type='button' />"
 		rst = rst & "/"
 		rst = rst & "<input onclick=""" & iif(not rs("page"), "type_edit", "type_edit_page") & "('" & rs("tid") & "')"" style='border: none; cursor: pointer; background: none; color: #ff7800;' value='编辑' type='button' />"
@@ -104,28 +106,28 @@
 	
 ' 截取字符串
 function gotTopic(str,strlen)
- if str="" then
-  gotTopic=""
-  exit function
- end if
- dim l,t,c, i
- str=replace(replace(replace(replace(str,"&nbsp;"," "),"&quot;",chr(34)),"&gt;",">"),"&lt;","<")
- l=len(str)
- t=0
- for i=1 to l
-  c=Abs(Asc(Mid(str,i,1)))
-  if c>255 then
-   t=t+2
-  else
-   t=t+1
-  end if
-  if t>=strlen then
-   gotTopic=left(str,i) & "..."
-   exit for
-  else
-   gotTopic=str
-  end if
- next
- gotTopic=replace(replace(replace(replace(gotTopic," ","&nbsp;"),chr(34),"&quot;"),">","&gt;"),"<","&lt;")
+	if str="" then
+		gotTopic=""
+		exit function
+	end if
+	dim l,t,c, i
+	str=replace(replace(replace(replace(str,"&nbsp;"," "),"&quot;",chr(34)),"&gt;",">"),"&lt;","<")
+	l=len(str)
+	t=0
+	for i=1 to l
+		c=Abs(Asc(Mid(str,i,1)))
+		if c>255 then
+			t=t+2
+		else
+			t=t+1
+		end if
+		if t>=strlen then
+			gotTopic=left(str,i) & "..."
+			exit for
+		else
+			gotTopic=str
+		end if
+	next
+	gotTopic=replace(replace(replace(replace(gotTopic," ","&nbsp;"),chr(34),"&quot;"),">","&gt;"),"<","&lt;")
 end function
 %>

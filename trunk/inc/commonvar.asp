@@ -5,6 +5,8 @@
 	' * http://xcoder.in
 	'--------------------------
 	
+	Easp.Tpl.AspEnable	=	True
+	
 	' 常用辅助常量
 	dim endl
 	endl = "<br />"
@@ -24,13 +26,11 @@
 	g_config_rs = Easp.db.GRD("config", "id=1")
 	Contact_Info = Easp.db.GRD("contact", "cid=1")
 	
-	Easp.Tpl.AspEnable	=	true
-	
 	WebName				=	g_config_rs("webname")
-	Root				=	g_config_rs("root")
+	Root				=	g_config_rs("root") & "/"
 	Skin				=	g_config_rs("skin")
 	BeiAn				=	"<a href='http://www.miibeian.gov.cn/' target='_blank'>" & g_config_rs("beian") & "</a>"
-	Copyright			=	g_config_rs("copyright") & "Powered by &copy;<a href='" & sys_web & "'>" & sys_name & "</a> " & sys_ver
+	Copyright			=	g_config_rs("copyright") & "<br />Powered by &copy;<a href='" & sys_web & "'>" & sys_name & "</a> " & sys_ver
 	WebTitle			=	g_config_rs("webtitle")
 	MetaKeyword			=	g_config_rs("keyword")
 	MetaDescription		=	g_config_rs("description")

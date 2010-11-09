@@ -22,7 +22,7 @@
 		wend
 	end function
 	
-	' 得到目录下所有文章
+	' 得到目录下所有文章并且分页
 	function get_art_list_by_page(tid, pgsize)
 		' 将所有子目录打散到一个数组中
 		dim tid_str : tid_str = get_child_type_split(tid)
@@ -31,10 +31,11 @@
 		tid_arr_size = Ubound(tid_arr)
 		
 		' 将SQL条件写入condition
-		dim condition : condition = "tid = " & tid
+		dim condition : condition = "(tid = " & tid
 		for i = 0 to tid_arr_size - 1
 			condition = condition & " or tid = " & tid_arr(i)
 		next
+		condition = condition & ") and cyc = false"
 		
 		Easp.db.PageSize = pgsize
 		
@@ -69,6 +70,7 @@
 		if arr_in(pro_arr, "推荐") then condition = condition & "and istj = true "
 		if arr_in(pro_arr, "图片") then condition = condition & "and ispic = true "
 		if arr_in(pro_arr, "幻灯") then condition = condition & "and isflash = true "
+		condition = condition & "and cyc = false "
 		
 		dim tmp_list
 		set tmp_list = Easp.db.GR("content:" & num, condition, "cid desc")
