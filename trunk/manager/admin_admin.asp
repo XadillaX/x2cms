@@ -7,12 +7,9 @@
 %>
 <!--#include file="admin_common.asp" -->
 <%
-	dim Page, rs, PageTitle
+	dim rs, PageTitle
 	PageTitle = "管理员列表"	
 	Easp.db.PageSize = 15							' 分页数量
-	
-	' 得到页码，默认为0
-	Page = Easp.Get("page:n:0")
 	
 	' 获取分页
 	set rs = Easp.db.GetPageRecord(0, Array("admin", "", "aid desc"))

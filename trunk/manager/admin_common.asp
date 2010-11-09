@@ -17,6 +17,8 @@
 	SuperPages = arr_push(SuperPages, AdminPath & "admin_log.asp")
 	SuperPages = arr_push(SuperPages, AdminPath & "admin_config.asp")
 	SuperPages = arr_push(SuperPages, AdminPath & "admin_config_chk.asp")
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_type_chkedit.asp")
+	SuperPages = arr_push(SuperPages, AdminPath & "admin_type.asp")
 	
 	PageName = LCase(Easp.GetUrl(0))
 

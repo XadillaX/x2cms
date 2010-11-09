@@ -36,7 +36,7 @@
 		Easp.Tpl "__address__", Contact_Info("caddress")	' 公司地址
 		
 		' 主栏目
-		dim type_rs
+		dim type_rs, ch_type_rs
 		set type_rs = Easp.db.GR("type", "father=-1", "ord asc")
 		while not type_rs.EOF
 			Easp.Tpl "__mainnav__.type", type_rs("type")
