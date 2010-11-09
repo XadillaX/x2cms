@@ -77,6 +77,20 @@
 	
 	' 生成幻灯代码
 	function get_flash(tid, width, height)
-				
+		dim tmp_str
+		tmp_str = "<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' width='" & width & "' height='" & height & "' id='flash_news' align='middle'>"
+		tmp_str = tmp_str & "<param name='allowScriptAccess' value='sameDomain' />"
+		tmp_str = tmp_str & "<param name='movie' value='"
+		tmp_str = tmp_str & "images/flash_news.swf?data=" & Root & "/getdata.asp?action=flash_xml&tid=" & tid
+		tmp_str = tmp_str & "' />"
+		tmp_str = tmp_str & "<param name='quality' value='high' />"
+		tmp_str = tmp_str & "<param name='wmode' value='transparent' />"
+		tmp_str = tmp_str & "<param name='bgcolor' value='#ffffff' />"
+		tmp_str = tmp_str & "<embed src='"
+		tmp_str = tmp_str & "images/flash_news.swf?data=" & Root & "/getdata.asp?action=flash_xml&tid=" & tid
+		tmp_str = tmp_str & "' quality='high' wmode='transparent' bgcolor='#ffffff' width='" & width & "' height='" & height & "' align='middle' allowScriptAccess='sameDomain' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />"
+		tmp_str = tmp_str & "</object>"
+		
+		get_flash = tmp_str
 	end function
 %>

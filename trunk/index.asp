@@ -5,6 +5,8 @@
 	' * By XadillaX
 	' * http://xcoder.in
 	'--------------------------
+	
+	dim tid
 
 	if Easp.Get("p:s") = "" then
 		Easp.Tpl.Load tpl_index
@@ -14,6 +16,7 @@
 		set type_rs = Easp.db.GRD("type", "typeurl='" & Easp.CheckForm(Easp.Get("p:s"), "", 1, "非法参数！") & "'")
 		
 		if Easp.Has(type_rs) then
+			tid = type_rs("tid")
 			' 判断页面类型
 			if type_rs("page") then
 				Easp.Tpl "__pagecode__", type_rs("pagecode")
@@ -61,6 +64,9 @@
 			Easp.Alert "404错误：页面不存在！"
 		end if
 	end if
+	
+	' Flash幻灯片标签，若要自定义栏目以及长宽请在模板中请用ASP标签调用函数get_flash(栏目id, 宽, 高)
+	Easp.Tpl "__flash__", get_flash(iif(action = "", -1, tid), 250, 250)
 	
 	' 载入通用标签
 	CommonTags()
