@@ -65,6 +65,13 @@
 			
 			' 特有标签
 			Easp.Tpl "__title__", type_rs("type")
+			Easp.Tpl "__tid__", type_rs("tid")
+			Easp.Tpl "__typeurl__", type_rs("typeurl")
+			Easp.Tpl "__count__", type_rs("count")
+			Easp.Tpl "__roottitle__", f_type_rs("type")
+			Easp.Tpl "__roottid__", f_type_rs("tid")
+			Easp.Tpl "__roottypeurl__", f_type_rs("typeurl")
+			Easp.Tpl "__rootcount__", f_type_rs("count")
 		else
 			Easp.Alert "404错误：页面不存在！"
 		end if
