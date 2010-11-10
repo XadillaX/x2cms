@@ -28,22 +28,22 @@ Set upload = new upload_5xsoft
 Set file = upload.file("imgFile")
 
 If file.fileSize < 1 Then
-	Set upload = nothing
-	Set file = nothing
-	showError("请选择文件。")
+    Set upload = nothing
+    Set file = nothing
+    showError("请选择文件。")
 End If
 
 Set fso = Server.CreateObject("Scripting.FileSystemObject")
 If Not fso.FolderExists(Server.mappath(savePath)) Then
-	Set upload = nothing
-	Set file = nothing
-	showError("上传目录不存在。")
+    Set upload = nothing
+    Set file = nothing
+    showError("上传目录不存在。")
 End If
 
 If file.fileSize > maxSize Then
-	Set upload = nothing
-	Set file = nothing
-	showError("上传文件大小超过限制。")
+    Set upload = nothing
+    Set file = nothing
+    showError("上传文件大小超过限制。")
 End If
 
 fileName = file.filename
@@ -53,9 +53,9 @@ ranNum = int(9000000 * rnd) + 10000
 newFileName = year(now) & month(now) & day(now) & hour(now) & minute(now) & second(now) & ranNum & "." & fileExt
 
 If instr(fileTypes, lcase(fileExt)) < 1 Then
-	Set upload = nothing
-	Set file = nothing
-	showError("上传文件扩展名是不允许的扩展名。")
+    Set upload = nothing
+    Set file = nothing
+    showError("上传文件扩展名是不允许的扩展名。")
 End If
 
 filePath = Server.mappath(savePath & newFileName)
@@ -67,7 +67,7 @@ Set upload = nothing
 Set file = nothing
 
 If Not fso.FileExists(filePath) Then
-	showError("上传文件失败。")
+    showError("上传文件失败。")
 End If
 
 Response.AddHeader "Content-Type", "text/html; charset=UTF-8"
@@ -78,12 +78,12 @@ hash.Flush
 Response.End
 
 Function showError(message)
-	Response.AddHeader "Content-Type", "text/html; charset=UTF-8"
-	Dim hash
-	Set hash = jsObject()
-	hash("error") = 1
-	hash("message") = message
-	hash.Flush
-	Response.End
+    Response.AddHeader "Content-Type", "text/html; charset=UTF-8"
+    Dim hash
+    Set hash = jsObject()
+    hash("error") = 1
+    hash("message") = message
+    hash.Flush
+    Response.End
 End Function
 %>

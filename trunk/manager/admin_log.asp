@@ -1,21 +1,21 @@
 ﻿<%
-	'--------------------------
-	' * 操作日志
-	' * By XadillaX
-	' * http://xcoder.in
-	'--------------------------
+    '--------------------------
+    ' * 操作日志
+    ' * By XadillaX
+    ' * http://xcoder.in
+    '--------------------------
 %>
 <!--#include file="admin_common.asp" -->
 <%
-	dim Page, rs, PageTitle
-	PageTitle = "操作日志"	
-	Easp.db.PageSize = 15							' 分页数量
-	
-	' 得到页码，默认为0
-	Page = Easp.Get("page:n,:0")
-	
-	' 获取分页
-	set rs = Easp.db.GetPageRecord(0, Array("admin_log", "", "time desc"))
+    dim Page, rs, PageTitle
+    PageTitle = "操作日志"    
+    Easp.db.PageSize = 15                            ' 分页数量
+    
+    ' 得到页码，默认为0
+    Page = Easp.Get("page:n,:0")
+    
+    ' 获取分页
+    set rs = Easp.db.GetPageRecord(0, Array("admin_log", "", "time desc"))
 %>
 <!--#include file="admin_common_top.asp" -->
 
@@ -28,10 +28,10 @@
         <td width="16%" valign="middle">操作时间</td>
         <td width="17%" valign="middle">操作IP</td>
     </tr>
-    <%	
-		for i = 1 to rs.PageSize
-			if rs.Eof then exit for
-	%>
+    <%    
+        for i = 1 to rs.PageSize
+            if rs.Eof then exit for
+    %>
     <tr class="table_row <%=iif(i mod 2 = 1, "table_row_clr_1", "table_row_clr_2")%>">
         <td width="11%"><%=rs("lid")%></td>
         <td width="15%"><%=rs("username")%></td>
@@ -40,9 +40,9 @@
         <td width="17%"><%=rs("ip")%></td>
     </tr>
     <%
-			rs.MoveNext()
-		next
-	%>
+            rs.MoveNext()
+        next
+    %>
     <tr class="table_title">
         <td colspan="5"><%=Easp.db.GetPager("default")%></td>
     </tr>

@@ -19,37 +19,37 @@
 <body>
 <script type="text/javascript">
 $(function(){
-	$(".table_row").hover(
-		function() {
-			$(this).attr("bgclr", $(this).css("background-color"));
-			$(this).css("background-color", "#E1F9FF");
-		},
-		
-		function() {
-			$(this).css("background-color", $(this).attr("bgclr"));
-		}
-	);
+    $(".table_row").hover(
+        function() {
+            $(this).attr("bgclr", $(this).css("background-color"));
+            $(this).css("background-color", "#E1F9FF");
+        },
+        
+        function() {
+            $(this).css("background-color", $(this).attr("bgclr"));
+        }
+    );
 });
 
 function GoURL(url) {
-	window.location.href = url;
+    window.location.href = url;
 }
 </script>
 <table width="100%"  border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td height="32" background="images/subMenu_bg.gif"  style=" line-height:32px">
-    	<div class="l">
-    		<div class="mainMenu"><%=PageTitle%></div>
-    	</div>
+        <div class="l">
+            <div class="mainMenu"><%=PageTitle%></div>
+        </div>
     </td>
   </tr>
 </table>
 <!---->
 <table width="100%" border="0" class="bg1 mytable round_angle15">
-	<tr>
-		<td width="241" height="25"  style="padding-left:10px; line-height:32px">
-        	<span class="f14_gold14">
-			<%if Session(SessionPre & "admin_type")=true then%>
+    <tr>
+        <td width="241" height="25"  style="padding-left:10px; line-height:32px">
+            <span class="f14_gold14">
+            <%if Session(SessionPre & "admin_type")=true then%>
             超级管理员
             <%end if%>
             </span>

@@ -45,7 +45,7 @@ p{margin:5px 12px;color:#000000}
 .backs{BACKGROUND-COLOR: #3F8805;COLOR: #ffffff;text-align:center}
 .backq{BACKGROUND-COLOR: #EEFEE0}
 .backc{BACKGROUND-COLOR: #3F8805;BORDER: medium none;COLOR: #ffffff;HEIGHT: 18px;font-size: 9pt}
-.fonts{	COLOR: #3F8805}
+.fonts{    COLOR: #3F8805}
 -->
 </STYLE>
 </HEAD>
@@ -119,58 +119,58 @@ end sub
 sub servinfo()
 %>
   <h2>服务器概况</h2>
-	<table border=0 width=500 cellspacing=1 cellpadding=3>
-	  <tr>
-		<td width="110">服务器地址</td><td width="390">名称 <%=Request.ServerVariables("SERVER_NAME")%>(IP:<%=Request.ServerVariables("LOCAL_ADDR")%>) 端口:<%=Request.ServerVariables("SERVER_PORT")%></td>
-	  </tr>
-	  <%
-	  tnow = now():oknow = cstr(tnow)
-	  if oknow <> year(tnow) & "-" & month(tnow) & "-" & day(tnow) & " " & hour(tnow) & ":" & right(FormatNumber(minute(tnow)/100,2),2) & ":" & right(FormatNumber(second(tnow)/100,2),2) then oknow = oknow & " (日期格式不规范)"
-	  %>
-	  <tr>
-		<td>服务器时间</td><td><%=oknow%></td>
-	  </tr>
-	  <tr>
-		<td>IIS版本</td><td><%=Request.ServerVariables("SERVER_SOFTWARE")%></td>
-	  </tr>
-	  <tr>
-		<td>脚本超时时间</td><td><%=Server.ScriptTimeout%> 秒</td>
-	  </tr>
-	  <tr>
-		<td>本文件路径</td><td><%=Request.ServerVariables("PATH_TRANSLATED")%></td>
-	  </tr>
-	  <tr>
-		<td>服务器脚本引擎</td><td><%=ScriptEngine & "/"& ScriptEngineMajorVersion &"."&ScriptEngineMinorVersion&"."& ScriptEngineBuildVersion %> , <%="JScript/" & getjver()%></td>
-	  </tr>
-	  <%getsysinfo()  '获得服务器数据%>
-	  <tr>
-		<td>服务器操作系统</td><td><%=okOS%></td>
-	  </tr>
-	  <tr>
-		<td>全局和会话变量</td><td>Application 变量 <%=Application.Contents.count%> 个<%if Application.Contents.count>0 then Response.Write "[<a href=""?T=C"">列表</a>]"%>, 
-		Session 变量 <%=Session.Contents.count%> 个  <%if Session.Contents.count>0 then Response.Write "[<a href=""?T=D"">列表</a>]"%></td>
-	  </tr>
-	  <tr>
-		<td>ServerVariables</td><td><%=Request.ServerVariables.Count%> 个  <%if Request.ServerVariables.Count>0 then Response.Write "[<a href=""?T=E"">Request.ServerVariables 列表</a>]"%></td>
-	  </tr>
-	  <tr>
-		<td>服务器CPU通道数</td><td><%=okCPUS%> 个</td>
-	  </tr>
-	  <%
-	  call ObjTest("WScript.Shell")
-	  if isobj then
-	    set WSshell=server.CreateObject("WScript.Shell")
-	  %>
-	  <tr>
-		<td>服务器CPU详情</td><td><%=okCPU%></td>
-	  </tr>
-	  <tr>
-		<td>全部服务器环境</td><td><%=WSshell.Environment.count%> 个  <%if WSshell.Environment.count>0 then Response.Write "[<a href=""?T=F"">WSshell.Environment 列表</a>]"%></td>
-	  </tr>
-	  <%
-	  end if
-	  %>
-	</table>
+    <table border=0 width=500 cellspacing=1 cellpadding=3>
+      <tr>
+        <td width="110">服务器地址</td><td width="390">名称 <%=Request.ServerVariables("SERVER_NAME")%>(IP:<%=Request.ServerVariables("LOCAL_ADDR")%>) 端口:<%=Request.ServerVariables("SERVER_PORT")%></td>
+      </tr>
+      <%
+      tnow = now():oknow = cstr(tnow)
+      if oknow <> year(tnow) & "-" & month(tnow) & "-" & day(tnow) & " " & hour(tnow) & ":" & right(FormatNumber(minute(tnow)/100,2),2) & ":" & right(FormatNumber(second(tnow)/100,2),2) then oknow = oknow & " (日期格式不规范)"
+      %>
+      <tr>
+        <td>服务器时间</td><td><%=oknow%></td>
+      </tr>
+      <tr>
+        <td>IIS版本</td><td><%=Request.ServerVariables("SERVER_SOFTWARE")%></td>
+      </tr>
+      <tr>
+        <td>脚本超时时间</td><td><%=Server.ScriptTimeout%> 秒</td>
+      </tr>
+      <tr>
+        <td>本文件路径</td><td><%=Request.ServerVariables("PATH_TRANSLATED")%></td>
+      </tr>
+      <tr>
+        <td>服务器脚本引擎</td><td><%=ScriptEngine & "/"& ScriptEngineMajorVersion &"."&ScriptEngineMinorVersion&"."& ScriptEngineBuildVersion %> , <%="JScript/" & getjver()%></td>
+      </tr>
+      <%getsysinfo()  '获得服务器数据%>
+      <tr>
+        <td>服务器操作系统</td><td><%=okOS%></td>
+      </tr>
+      <tr>
+        <td>全局和会话变量</td><td>Application 变量 <%=Application.Contents.count%> 个<%if Application.Contents.count>0 then Response.Write "[<a href=""?T=C"">列表</a>]"%>, 
+        Session 变量 <%=Session.Contents.count%> 个  <%if Session.Contents.count>0 then Response.Write "[<a href=""?T=D"">列表</a>]"%></td>
+      </tr>
+      <tr>
+        <td>ServerVariables</td><td><%=Request.ServerVariables.Count%> 个  <%if Request.ServerVariables.Count>0 then Response.Write "[<a href=""?T=E"">Request.ServerVariables 列表</a>]"%></td>
+      </tr>
+      <tr>
+        <td>服务器CPU通道数</td><td><%=okCPUS%> 个</td>
+      </tr>
+      <%
+      call ObjTest("WScript.Shell")
+      if isobj then
+        set WSshell=server.CreateObject("WScript.Shell")
+      %>
+      <tr>
+        <td>服务器CPU详情</td><td><%=okCPU%></td>
+      </tr>
+      <tr>
+        <td>全部服务器环境</td><td><%=WSshell.Environment.count%> 个  <%if WSshell.Environment.count>0 then Response.Write "[<a href=""?T=F"">WSshell.Environment 列表</a>]"%></td>
+      </tr>
+      <%
+      end if
+      %>
+    </table>
 <%
 end sub
 
@@ -318,63 +318,63 @@ sub comlist()
   OtT(0,7,0) = "IISSample.PageCounter"
   OtT(0,8,0) = "MSWC.PermissionChecker"
   OtT(0,9,0) = "Microsoft.XMLHTTP"
-	OtT(0,9,1) = "(Http 组件, 常在采集系统中用到)"
+    OtT(0,9,1) = "(Http 组件, 常在采集系统中用到)"
   OtT(0,10,0) = "WScript.Shell"
-	OtT(0,10,1) = "(Shell 组件, 可能涉及安全问题)"
+    OtT(0,10,1) = "(Shell 组件, 可能涉及安全问题)"
   OtT(0,11,0) = "Scripting.FileSystemObject"
-	OtT(0,11,1) = "(FSO 文件系统管理、文本文件读写)"
+    OtT(0,11,1) = "(FSO 文件系统管理、文本文件读写)"
   OtT(0,12,0) = "Adodb.Connection"
-	OtT(0,12,1) = "(ADO 数据对象)"
+    OtT(0,12,1) = "(ADO 数据对象)"
   OtT(0,13,0) = "Adodb.Stream"
-	OtT(0,13,1) = "(ADO 数据流对象, 常见被用在无组件上传程序中)"
-	
+    OtT(0,13,1) = "(ADO 数据流对象, 常见被用在无组件上传程序中)"
+    
   OtT(1,0,0) = "SoftArtisans.FileUp"
-	OtT(1,0,1) = "(SA-FileUp 文件上传)"
+    OtT(1,0,1) = "(SA-FileUp 文件上传)"
   OtT(1,1,0) = "SoftArtisans.FileManager"
-	OtT(1,1,1) = "(SoftArtisans 文件管理)"
+    OtT(1,1,1) = "(SoftArtisans 文件管理)"
   OtT(1,2,0) = "Ironsoft.UpLoad"
-	OtT(1,2,1) = "(国产免费, 上传组件)"
+    OtT(1,2,1) = "(国产免费, 上传组件)"
   OtT(1,3,0) = "LyfUpload.UploadFile"
-	OtT(1,3,1) = "(刘云峰的文件上传组件)"
+    OtT(1,3,1) = "(刘云峰的文件上传组件)"
   OtT(1,4,0) = "Persits.Upload.1"
-	OtT(1,4,1) = "(ASPUpload 文件上传)"
+    OtT(1,4,1) = "(ASPUpload 文件上传)"
   OtT(1,5,0) = "w3.upload"
-	OtT(1,5,1) = "(Dimac 文件上传)"
+    OtT(1,5,1) = "(Dimac 文件上传)"
 
   OtT(2,0,0) = "JMail.SmtpMail"
-	OtT(2,0,1) = "(Dimac JMail 邮件收发) <a href='http://www.ajiang.net/products/aspcheck/coms.asp'>中文手册下载</a>"
+    OtT(2,0,1) = "(Dimac JMail 邮件收发) <a href='http://www.ajiang.net/products/aspcheck/coms.asp'>中文手册下载</a>"
   OtT(2,1,0) = "CDONTS.NewMail"
-	OtT(2,1,1) = "(CDONTS)"
+    OtT(2,1,1) = "(CDONTS)"
   OtT(2,2,0) = "CDO.Message"
-	OtT(2,2,1) = "(CDOSYS)"
+    OtT(2,2,1) = "(CDOSYS)"
   OtT(2,3,0) = "Persits.MailSender"
-	OtT(2,3,1) = "(ASPemail 发信)"
+    OtT(2,3,1) = "(ASPemail 发信)"
   OtT(2,4,0) = "SMTPsvg.Mailer"
-	OtT(2,4,1) = "(ASPmail 发信)"
+    OtT(2,4,1) = "(ASPmail 发信)"
   OtT(2,5,0) = "DkQmail.Qmail"
-	OtT(2,5,1) = "(dkQmail 发信)"
+    OtT(2,5,1) = "(dkQmail 发信)"
   OtT(2,6,0) = "SmtpMail.SmtpMail.1"
-	OtT(2,6,1) = "(SmtpMail 发信)"
-	
+    OtT(2,6,1) = "(SmtpMail 发信)"
+    
   OtT(3,0,0) = "SoftArtisans.ImageGen"
-	OtT(3,0,1) = "(SA 的图像读写组件)"
+    OtT(3,0,1) = "(SA 的图像读写组件)"
   OtT(3,1,0) = "W3Image.Image"
-	OtT(3,1,1) = "(Dimac 的图像读写组件)"
+    OtT(3,1,1) = "(Dimac 的图像读写组件)"
   OtT(3,2,0) = "Persits.Jpeg"
-	OtT(3,2,1) = "(ASPJpeg)"
+    OtT(3,2,1) = "(ASPJpeg)"
   OtT(3,3,0) = "XY.Graphics"
-	OtT(3,3,1) = "(国产免费, 图像/图表处理)"
+    OtT(3,3,1) = "(国产免费, 图像/图表处理)"
   OtT(3,4,0) = "Ironsoft.DrawPic"
-	OtT(3,4,1) = "(国产免费, 图像/图形处理)"
+    OtT(3,4,1) = "(国产免费, 图像/图形处理)"
   OtT(3,5,0) = "Ironsoft.FlashCapture"
-	OtT(3,5,1) = "(国产免费, 多功能 FLASH 截图)"
+    OtT(3,5,1) = "(国产免费, 多功能 FLASH 截图)"
   OtT(3,6,0) = "dyy.zipsvr"
-	OtT(3,6,1) = "(国产免费, 呆呆文件压缩解压组件)"
+    OtT(3,6,1) = "(国产免费, 呆呆文件压缩解压组件)"
   OtT(3,7,0) = "hin2.com_iis"
-	OtT(3,7,1) = "(国产免费, 呆呆IIS管理组件)"
+    OtT(3,7,1) = "(国产免费, 呆呆IIS管理组件)"
   OtT(3,8,0) = "Socket.TCP"
-	OtT(3,8,1) = "(Dimac 公司的 Socket 组件)"
-	
+    OtT(3,8,1) = "(Dimac 公司的 Socket 组件)"
+    
 %>
 <h2>ASP组件支持情况</h2><a name="G"></a>
 
@@ -393,14 +393,14 @@ Response.Write "<p style=""margin:9px 0px 0px 0px"">"
 Dim Verobj1
 ObjTest(strClass)
   If Not IsObj then 
-	Response.Write "<font color=red>很遗憾，该服务器不支持 " & strclass & " 组件！</font>"
+    Response.Write "<font color=red>很遗憾，该服务器不支持 " & strclass & " 组件！</font>"
   Else
-	if VerObj="" or isnull(VerObj) then 
-	  Verobj1="无法取得该组件版本"
-	Else
-	  Verobj1="该组件版本是：" & VerObj
-	End If
-	Response.Write "<font class=fonts>恭喜！该服务器支持 " & strclass & " 组件。" & verobj1 & "</font>"
+    if VerObj="" or isnull(VerObj) then 
+      Verobj1="无法取得该组件版本"
+    Else
+      Verobj1="该组件版本是：" & VerObj
+    End If
+    Response.Write "<font class=fonts>恭喜！该服务器支持 " & strclass & " 组件。" & verobj1 & "</font>"
   End If
 end if
 %>
@@ -458,7 +458,7 @@ end if
 
 <p>[<a href="http://www.ajiang.net/products/aspcheck/coms.asp">查看上述组件的详细介绍和下载地址</a>]
 <%
-	
+    
 end sub
 
 
@@ -474,7 +474,7 @@ sub disklist()
 
   ObjTest("Scripting.FileSystemObject")
   if isobj then
-	set fsoobj=server.CreateObject("Scripting.FileSystemObject")
+    set fsoobj=server.CreateObject("Scripting.FileSystemObject")
 
 %>
 
@@ -484,38 +484,38 @@ sub disklist()
 
 <table border=0 width=500 cellspacing=1 cellpadding=3>
   <tr align=center class="backs">
-	<td width="100">盘符和磁盘类型</td>
-	<td width="50">就绪</td>
-	<td width="110">卷标</td>
-	<td width="80">文件系统</td>
-	<td width="80">可用空间</td>
-	<td width="80">总空间</td>
+    <td width="100">盘符和磁盘类型</td>
+    <td width="50">就绪</td>
+    <td width="110">卷标</td>
+    <td width="80">文件系统</td>
+    <td width="80">可用空间</td>
+    <td width="80">总空间</td>
   </tr>
 <%
 
-	' 测试磁盘信息的想法来自“COCOON ASP 探针”
-	
-	set drvObj=fsoobj.Drives
-	for each d in drvObj
+    ' 测试磁盘信息的想法来自“COCOON ASP 探针”
+    
+    set drvObj=fsoobj.Drives
+    for each d in drvObj
 %>
   <tr align="center" class="backq">
-	<td align="right"><%=cdrivetype(d.DriveType) & " " & d.DriveLetter%>:</td>
+    <td align="right"><%=cdrivetype(d.DriveType) & " " & d.DriveLetter%>:</td>
 <%
-	if d.DriveLetter = "A" then	'为防止影响服务器，不检查软驱
-		Response.Write "<td></td><td></td><td></td><td></td><td></td>"
-	else
+    if d.DriveLetter = "A" then    '为防止影响服务器，不检查软驱
+        Response.Write "<td></td><td></td><td></td><td></td><td></td>"
+    else
 %>
-	<td><%=cIsReady(d.isReady)%></td>
-	<td><%=d.VolumeName%></td>
-	<td><%=d.FileSystem%></td>
-	<td align="right"><%=cSize(d.FreeSpace)%></td>
-	<td align="right"><%=cSize(d.TotalSize)%></td>
+    <td><%=cIsReady(d.isReady)%></td>
+    <td><%=d.VolumeName%></td>
+    <td><%=d.FileSystem%></td>
+    <td align="right"><%=cSize(d.FreeSpace)%></td>
+    <td align="right"><%=cSize(d.TotalSize)%></td>
 <%
-	end if
+    end if
 %>
   </tr>
 <%
-	next
+    next
 %>
 </td></tr>
 </table>
@@ -527,25 +527,25 @@ sub disklist()
 Response.Flush
 
 
-	dPath = server.MapPath("./")
-	set dDir = fsoObj.GetFolder(dPath)
-	set dDrive = fsoObj.GetDrive(dDir.Drive)
+    dPath = server.MapPath("./")
+    set dDir = fsoObj.GetFolder(dPath)
+    set dDrive = fsoObj.GetDrive(dDir.Drive)
 %>
 <p>文件夹: <%=dPath%></p>
 <table border=0 width=500 cellspacing=1 cellpadding=3>
   <tr height="18" align="center" class="backs">
-	<td width="75">已用空间</td>
-	<td width="75">可用空间</td>
-	<td width="75">文件夹数</td>
-	<td width="75">文件数</td>
-	<td width="200">创建时间</td>
+    <td width="75">已用空间</td>
+    <td width="75">可用空间</td>
+    <td width="75">文件夹数</td>
+    <td width="75">文件数</td>
+    <td width="200">创建时间</td>
   </tr>
   <tr height="18" align="center" class="backq">
-	<td><%=cSize(dDir.Size)%></td>
-	<td><%=cSize(dDrive.AvailableSpace)%></td>
-	<td><%=dDir.SubFolders.Count%></td>
-	<td><%=dDir.Files.Count%></td>
-	<td><%=dDir.DateCreated%></td>
+    <td><%=cSize(dDir.Size)%></td>
+    <td><%=cSize(dDrive.AvailableSpace)%></td>
+    <td><%=dDir.SubFolders.Count%></td>
+    <td><%=dDir.Files.Count%></td>
+    <td><%=dDir.DateCreated%></td>
   </tr>
 </td></tr>
 </table>
@@ -571,74 +571,74 @@ sub diskspeed()
   <%
   ObjTest("Scripting.FileSystemObject")
   if isobj then
-	set fsoobj=server.CreateObject("Scripting.FileSystemObject")
-	' 测试文件读写的想法来自“迷城浪子”
-	
-	Response.Write "<p>正在重复创建、写入和删除文本文件50次..."
+    set fsoobj=server.CreateObject("Scripting.FileSystemObject")
+    ' 测试文件读写的想法来自“迷城浪子”
+    
+    Response.Write "<p>正在重复创建、写入和删除文本文件50次..."
 
-	dim thetime3,tempfile,iserr
+    dim thetime3,tempfile,iserr
 
     iserr=false
-	t1=timer
-	tempfile=server.MapPath("./") & "\aspchecktest.txt"
-	for i=1 to 50
-		Err.Clear
+    t1=timer
+    tempfile=server.MapPath("./") & "\aspchecktest.txt"
+    for i=1 to 50
+        Err.Clear
 
-		set tempfileOBJ = FsoObj.CreateTextFile(tempfile,true)
-		if Err <> 0 then
-			Response.Write "创建文件错误！<br><br>"
-			iserr=true
-			Err.Clear
-			exit for
-		end if
-		tempfileOBJ.WriteLine "Only for test. Ajiang ASPcheck"
-		if Err <> 0 then
-			Response.Write "写入文件错误！<br><br>"
-			iserr=true
-			Err.Clear
-			exit for
-		end if
-		tempfileOBJ.close
-		Set tempfileOBJ = FsoObj.GetFile(tempfile)
-		tempfileOBJ.Delete 
-		if Err <> 0 then
-			Response.Write "删除文件错误！<br><br>"
-			iserr=true
-			Err.Clear
-			exit for
-		end if
-		set tempfileOBJ=nothing
-	next
-	t2=timer
+        set tempfileOBJ = FsoObj.CreateTextFile(tempfile,true)
+        if Err <> 0 then
+            Response.Write "创建文件错误！<br><br>"
+            iserr=true
+            Err.Clear
+            exit for
+        end if
+        tempfileOBJ.WriteLine "Only for test. Ajiang ASPcheck"
+        if Err <> 0 then
+            Response.Write "写入文件错误！<br><br>"
+            iserr=true
+            Err.Clear
+            exit for
+        end if
+        tempfileOBJ.close
+        Set tempfileOBJ = FsoObj.GetFile(tempfile)
+        tempfileOBJ.Delete 
+        if Err <> 0 then
+            Response.Write "删除文件错误！<br><br>"
+            iserr=true
+            Err.Clear
+            exit for
+        end if
+        set tempfileOBJ=nothing
+    next
+    t2=timer
     if iserr <> true then
-	thetime3=cstr(int(( (t2-t1)*10000 )+0.5)/10)
-	Response.Write "...已完成！<font color=red>" & thetime3 & "毫秒</font>。<br>"
-	Response.Flush
+    thetime3=cstr(int(( (t2-t1)*10000 )+0.5)/10)
+    Response.Write "...已完成！<font color=red>" & thetime3 & "毫秒</font>。<br>"
+    Response.Flush
 
 %>
 </p>
 <table border=0 width=500 cellspacing=1 cellpadding=3>
   <tr align=center class="backs">
-	<td width=350>供 对 照 的 服 务 器</td>
-	<td width=150>完成时间(毫秒)</td>
+    <td width=350>供 对 照 的 服 务 器</td>
+    <td width=150>完成时间(毫秒)</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.zitian.cn/">紫田网络梦幻II型虚拟主机</a></td><td>&nbsp;31～78</td>
+    <td><a class="a1" target="_blank" href="http://www.zitian.cn/">紫田网络梦幻II型虚拟主机</a></td><td>&nbsp;31～78</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.68l.com/">68互联</a></td><td>&nbsp;78</td>
+    <td><a class="a1" target="_blank" href="http://www.68l.com/">68互联</a></td><td>&nbsp;78</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.diy5.com">第5空间diy5.com四至强主机<font color=#888888>(P42.4,2GddrEcc,SCSI72.8G)</font></a></td><td>&nbsp;46～78</td>
+    <td><a class="a1" target="_blank" href="http://www.diy5.com">第5空间diy5.com四至强主机<font color=#888888>(P42.4,2GddrEcc,SCSI72.8G)</font></a></td><td>&nbsp;46～78</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.100u.com/?come=aspcheck&keyword=虚拟主机">百优科技 100u 主机</a></td><td>&nbsp;31～62</td>
+    <td><a class="a1" target="_blank" href="http://www.100u.com/?come=aspcheck&keyword=虚拟主机">百优科技 100u 主机</a></td><td>&nbsp;31～62</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.3366.com.cn">点击网络主机</a></td><td>&nbsp;31～62</td>
+    <td><a class="a1" target="_blank" href="http://www.3366.com.cn">点击网络主机</a></td><td>&nbsp;31～62</td>
   </tr>
   <tr>
-	<td><font color=red>这台服务器: <%=Request.ServerVariables("SERVER_NAME")%></font>&nbsp;</td><td>&nbsp;<font color=red><%=thetime3%></font></td>
+    <td><font color=red>这台服务器: <%=Request.ServerVariables("SERVER_NAME")%></font>&nbsp;</td><td>&nbsp;<font color=red><%=thetime3%></font></td>
   </tr>
 </table>
 <p>[<a href="http://www.ajiang.net/products/aspcheck/serverlist.asp" target="_blank">更多空间商的即时实测数据</a>]</p>
@@ -646,8 +646,8 @@ sub diskspeed()
 end if
 
 Response.Flush
-	
-	set fsoobj=nothing
+    
+    set fsoobj=nothing
 
 end if
 end sub
@@ -666,52 +666,52 @@ sub tspeed()
 <%
 Response.Flush
 
-	'感谢网际同学录 http://www.5719.net 推荐使用timer函数
-	'因为只进行50万次计算，所以去掉了是否检测的选项而直接检测
-	
-	Response.Write "整数运算测试，正在进行50万次加法运算..."
-	dim t1,t2,lsabc,thetime,thetime2
-	t1=timer
-	for i=1 to 500000
-		lsabc= 1 + 1
-	next
-	t2=timer
-	thetime=cstr(int(( (t2-t1)*10000 )+0.5)/10)
-	Response.Write "...已完成！<font color=red>" & thetime & "毫秒</font>。<br>"
+    '感谢网际同学录 http://www.5719.net 推荐使用timer函数
+    '因为只进行50万次计算，所以去掉了是否检测的选项而直接检测
+    
+    Response.Write "整数运算测试，正在进行50万次加法运算..."
+    dim t1,t2,lsabc,thetime,thetime2
+    t1=timer
+    for i=1 to 500000
+        lsabc= 1 + 1
+    next
+    t2=timer
+    thetime=cstr(int(( (t2-t1)*10000 )+0.5)/10)
+    Response.Write "...已完成！<font color=red>" & thetime & "毫秒</font>。<br>"
 
 
-	Response.Write "浮点运算测试，正在进行20万次开方运算..."
-	t1=timer
-	for i=1 to 200000
-		lsabc= 2^0.5
-	next
-	t2=timer
-	thetime2=cstr(int(( (t2-t1)*10000 )+0.5)/10)
-	Response.Write "...已完成！<font color=red>" & thetime2 & "毫秒</font>。<br>"
+    Response.Write "浮点运算测试，正在进行20万次开方运算..."
+    t1=timer
+    for i=1 to 200000
+        lsabc= 2^0.5
+    next
+    t2=timer
+    thetime2=cstr(int(( (t2-t1)*10000 )+0.5)/10)
+    Response.Write "...已完成！<font color=red>" & thetime2 & "毫秒</font>。<br>"
 %></p>
 <table border=0 width=500 cellspacing=1 cellpadding=3>
   <tr align=center class="backs">
-	<td width=350>供对照的服务器及完成时间(毫秒)</td>
+    <td width=350>供对照的服务器及完成时间(毫秒)</td>
     <td width=75>整数运算</td><td width=75>浮点运算</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.100u.com?come=aspcheck&keyword=虚拟主机"
-	>百优科技 100u 主机, <font color=#888888>2003-11-1</font></a></td><td>&nbsp;181～233</td><td>&nbsp;156～218</td>
+    <td><a class="a1" target="_blank" href="http://www.100u.com?come=aspcheck&keyword=虚拟主机"
+    >百优科技 100u 主机, <font color=#888888>2003-11-1</font></a></td><td>&nbsp;181～233</td><td>&nbsp;156～218</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.west263.net/index.asp?ads=ajiang"
-	>西部数码 west263 主机, <font color=#888888>2003-11-1</font></a></td><td>&nbsp;171～233</td><td>&nbsp;156～171</td>
+    <td><a class="a1" target="_blank" href="http://www.west263.net/index.asp?ads=ajiang"
+    >西部数码 west263 主机, <font color=#888888>2003-11-1</font></a></td><td>&nbsp;171～233</td><td>&nbsp;156～171</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.163n.com "
-	>数码城市 163n 主机,  <font color=#888888>2006-1-4</font></a></td><td>&nbsp;156～171</td><td>&nbsp;140～156</td>
+    <td><a class="a1" target="_blank" href="http://www.163n.com "
+    >数码城市 163n 主机,  <font color=#888888>2006-1-4</font></a></td><td>&nbsp;156～171</td><td>&nbsp;140～156</td>
   </tr>
   <tr>
-	<td><a class="a1" target="_blank" href="http://www.dnsmy.com/"
-	>永讯网络 Dnsmy 主机, <font color=#888888>2003-11-1</font></a></td><td>&nbsp;155～180</td><td>&nbsp;122～172</td>
+    <td><a class="a1" target="_blank" href="http://www.dnsmy.com/"
+    >永讯网络 Dnsmy 主机, <font color=#888888>2003-11-1</font></a></td><td>&nbsp;155～180</td><td>&nbsp;122～172</td>
   </tr>
   <tr>
-	<td><font color=red>这台服务器: <%=Request.ServerVariables("SERVER_NAME")%></font>&nbsp;</td><td>&nbsp;<font color=red><%=thetime%></font></td><td>&nbsp;<font color=red><%=thetime2%></font></td>
+    <td><font color=red>这台服务器: <%=Request.ServerVariables("SERVER_NAME")%></font>&nbsp;</td><td>&nbsp;<font color=red><%=thetime%></font></td><td>&nbsp;<font color=red><%=thetime2%></font></td>
   </tr>
 </table>
 <p>[<a href="http://www.ajiang.net/products/aspcheck/serverlist.asp" target="_blank">更多空间商的即时实测数据</a>]</p>
@@ -880,7 +880,7 @@ sub userlist()
 <%
   on error resume next
     for each obj in getObject("WinNT://.")
-	err.clear
+    err.clear
 %>
     <tr>
       <td align=center><!--<%=obj.path%>-->
@@ -892,11 +892,11 @@ sub userlist()
     end if
 %>
       </td>
-	  <td><%=obj.Name%><%if err=0 then Response.Write " (" & obj.displayname & ")"%><br><%=obj.path%>
-	  </td>
-	</tr>
+      <td><%=obj.Name%><%if err=0 then Response.Write " (" & obj.displayname & ")"%><br><%=obj.path%>
+      </td>
+    </tr>
 <%
-	next 
+    next 
 %>
   </table>
 <p>[<a href="http://www.ajiang.net/products/aspcheck/safe.asp">点击这里参考阿江的安全配置方法</a>]
@@ -1030,7 +1030,7 @@ sub ObjTest(strObj)
   IsObj=false
   VerObj=""
   set TestObj=server.CreateObject (strObj)
-  If -2147221005 <> Err then		'感谢网友iAmFisher的宝贵建议
+  If -2147221005 <> Err then        '感谢网友iAmFisher的宝贵建议
     IsObj = True
     VerObj = TestObj.version
     if VerObj="" or isnull(VerObj) then VerObj=TestObj.about

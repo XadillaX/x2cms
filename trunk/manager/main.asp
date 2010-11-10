@@ -1,23 +1,23 @@
 ﻿<%
-	'--------------------------
-	' * 后台首页
-	' * By XadillaX
-	' * http://xcoder.in
-	'--------------------------
-	
-	'--------------------------
-	' 本CMS遵循GPL协议开发
-	' 使用EasyASP和EasyIDE
-	' 请保留版权信息
-	'--------------------------
+    '--------------------------
+    ' * 后台首页
+    ' * By XadillaX
+    ' * http://xcoder.in
+    '--------------------------
+    
+    '--------------------------
+    ' 本CMS遵循GPL协议开发
+    ' 使用EasyASP和EasyIDE
+    ' 请保留版权信息
+    '--------------------------
 %>
 <!--#include file="admin_common.asp" -->
 <%
-	dim PageTitle
-	PageTitle = "后台首页"
-	
-	dim okOS, okCPUS, okCPU
-	
+    dim PageTitle
+    PageTitle = "后台首页"
+    
+    dim okOS, okCPUS, okCPU
+    
 ' 获取服务器常用参数
 sub getsysinfo()
   on error resume next
@@ -53,12 +53,12 @@ getsysinfo()
 %>
 <!--#include file="admin_common_top.asp" -->
 <div class="mytable" style="border: none;">
-	<table class="mytable" style="border: none;" border="0" cellspacing="0" cellpadding="0">
-    	<tr>
-        	<td width="50%" valign="bottom"><span style="font-size: 50px; font-family: 'Times New Roman', Times, serif; color: #900;">Welcome!</span></td>
-        	<td align="right" valign="bottom"><strong>&copy;<a href="<%=sys_web%>"><%=sys_name%></a></strong>&nbsp;<%=sys_ver%> powered by <%=sys_author%> / Last update: <%=sys_pubdate%></td>
-    	</tr>
-	</table>
+    <table class="mytable" style="border: none;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="50%" valign="bottom"><span style="font-size: 50px; font-family: 'Times New Roman', Times, serif; color: #900;">Welcome!</span></td>
+            <td align="right" valign="bottom"><strong>&copy;<a href="<%=sys_web%>"><%=sys_name%></a></strong>&nbsp;<%=sys_ver%> powered by <%=sys_author%> / Last update: <%=sys_pubdate%></td>
+        </tr>
+    </table>
     <div class="hr"></div>
     
     <table class="mytable" border="0" cellspacing="0" cellpadding="0">
@@ -103,13 +103,13 @@ getsysinfo()
         <td><%=request.servervariables("appl_physical_path")%></td>
         <td>网站文件占用空间</td>
         <td>
-        	<%
-				dim fsoObj
-				set fsoObj = server.CreateObject("Scripting.FileSystemObject")
-				dim web_dir
-				set web_dir = fsoObj.GetFolder(request.servervariables("appl_physical_path"))
-				echo cSize(web_dir.Size)
-			%>
+            <%
+                dim fsoObj
+                set fsoObj = server.CreateObject("Scripting.FileSystemObject")
+                dim web_dir
+                set web_dir = fsoObj.GetFolder(request.servervariables("appl_physical_path"))
+                echo cSize(web_dir.Size)
+            %>
         </td>
     </tr>
 </table>

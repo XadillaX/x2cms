@@ -1,9 +1,9 @@
 ﻿<%
-	'--------------------------
-	' * 管理大厅
-	' * By XadillaX
-	' * http://xcoder.in
-	'--------------------------
+    '--------------------------
+    ' * 管理大厅
+    ' * By XadillaX
+    ' * http://xcoder.in
+    '--------------------------
 %>
 <!--#include file="admin_common.asp" -->
 <html>
@@ -56,7 +56,7 @@
   </tr>
   <tr>
     <td height="44" align="center" background="images/foot_bg.gif">
-    	<p>X2CMS 由 
+        <p>X2CMS 由 
         (艾克斯の編碼者:<a href="http://www.xcoder.in/">http://www.xcoder.in</a>)@(艾克视图：<a href="http://www.x2studio.net/">http://www.x2studio.net</a>) 开发
         </p>
     </td>

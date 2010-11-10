@@ -1,9 +1,9 @@
 ﻿<%
-	'--------------------------
-	' * 管理登陆
-	' * By XadillaX
-	' * http://xcoder.in
-	'--------------------------
+    '--------------------------
+    ' * 管理登陆
+    ' * By XadillaX
+    ' * http://xcoder.in
+    '--------------------------
 %>
 <!--#include file="../config.asp" -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,11 +38,11 @@
             document.forms[0].submit();    
         }    
     }   
-	
+    
 $(function(){
-	$("#vcode_img").click(function(){
-		$(this).attr("src", "/cls/vcode.class.asp?" + Math.random());	
-	})
+    $("#vcode_img").click(function(){
+        $(this).attr("src", "/cls/vcode.class.asp?" + Math.random());    
+    })
 });
 </script>
 </head>
