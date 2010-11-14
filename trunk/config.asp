@@ -1,17 +1,12 @@
 ﻿<%
-     '--------------------------
+    '--------------------------
     ' * 主配置文件
     ' * By XadillaX
     ' * http://xcoder.in
     '--------------------------
+    Option Explicit
 %>
-<!--#include file="inc/easp/easp.asp" -->
-<!--#include file="inc/easyide.asp" -->
 <%
-    Easp.Use "tpl"
-    Easp.Use "Fso"
-    Easp.Use "List"
-    
     dim WebPath, DBFile, SkinPath, VCodeSession, SessionPre, AdminPath, AdminMaxTime, UploadPath, UploadMax, UploadExt
     dim DefaultPageSize
     
@@ -26,6 +21,13 @@
     UploadMax        =    4096000                                        ' 最大上传大小
     UploadExt        =    "doc;rar;ppt;gif;txt;jpg;png;bmp;zip;swf"    ' 上传允许后缀
     DefaultPageSize    =    10                                            ' 默认分页大小
+%>
+<!--#include file="inc/easp/easp.asp" -->
+<!--#include file="inc/easyide.asp" -->
+<%
+    Easp.Use "tpl"
+    Easp.Use "Fso"
+    Easp.Use "List"
 %>
 <!--#include file="conn.asp" -->
 <!--#include file="inc/func.asp" -->

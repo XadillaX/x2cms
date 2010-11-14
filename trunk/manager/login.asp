@@ -41,7 +41,7 @@
     
 $(function(){
     $("#vcode_img").click(function(){
-        $(this).attr("src", "/cls/vcode.class.asp?" + Math.random());    
+        $(this).attr("src", "../cls/vcode.class.asp?" + Math.random());    
     })
 });
 </script>
@@ -78,7 +78,7 @@ $(function(){
                     <td><label>
                         <input name="yzm" type="text" class="text_box" id="yzm" style="background-image:url(images/text_bg03.gif)" size="20" maxlength="8">
                       </label></td>
-                    <td><img title="点击以刷新" style="cursor: pointer;" id="vcode_img" src="/cls/vcode.class.asp?time=<%=Now()%>" height="20" /></td>
+                    <td><img title="点击以刷新" style="cursor: pointer;" id="vcode_img" src="../cls/vcode.class.asp?time=<%=Now()%>" height="20" /></td>
                     <td><img src="images/dr_btn.gif" width="63" height="22" onClick="document.form1.submit()" /></td>
                   </tr>
                 </table>
