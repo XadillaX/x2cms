@@ -1,4 +1,4 @@
-<%
+﻿<%
     '--------------------------
     ' * 通用变量
     ' * By XadillaX
@@ -6,12 +6,12 @@
     '--------------------------
     
     Easp.Tpl.AspEnable = True
-	Easp.Tpl.TagUnknown = "remove"
+    Easp.Tpl.TagUnknown = "remove"
     
     ' 常用辅助常量
     dim endl, enter
     endl = "<br />"
-	enter = Chr(13) & Chr(10)
+    enter = Chr(13) & Chr(10)
     
     ' 模板默认设置
     dim tpl_index, tpl_contact, tpl_single_page, tpl_art_list, tpl_content
@@ -19,7 +19,7 @@
     tpl_contact = "contact.tpl"
     tpl_single_page = "single.tpl"
     tpl_art_list = "artlist.tpl"
-	tpl_content = "content.tpl"
+    tpl_content = "content.tpl"
     
     dim i, j, k
     dim result

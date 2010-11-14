@@ -5,7 +5,7 @@
     ' * http://xcoder.in
     '--------------------------
 
-    Easp.BasePath                =    WebPath & "/inc/easp/"
+    Easp.BasePath                =    WebPath & "inc/easp/"
     Easp.CharSet                =    "UTF-8"
     Easp.Debug                    =    True
     Easp.CookieEncode            =    True
