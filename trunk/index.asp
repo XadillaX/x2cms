@@ -61,9 +61,11 @@
             Easp.Tpl "__mapstr__", map_str
             
             ' 载入普通文章列表
+			Easp.db.SetPager "mypager", "<div class=""pager"">{first}{prev}{list}{next}{last} 转到{jump}页</div>", Array("jump:select", "listlong:10","first:«","last:»","prev:‹","next:›","list:*")
+			
             dim art_list, art_list_pager
             set art_list = get_art_list_by_page(type_rs("tid"), DefaultPageSize)
-            art_list_pager = Easp.db.GetPager("default")
+            art_list_pager = Easp.db.GetPager("mypager")
             Easp.Tpl "__pager__", art_list_pager
             ' echo art_list_pager
             i = 0
