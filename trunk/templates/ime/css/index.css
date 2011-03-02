@@ -1,0 +1,18 @@
+/**
+ * Index.css
+ * IME Style Sheet by XadillaX
+ * Pictures by F-Fine Studio
+ */
+body { background: url("../images/background.jpg") no-repeat top center; }
+
+#main_wraper { margin-top: 102px; margin-left: auto; margin-right: auto; width: 670px; min-height: 585px; }
+    #text_div { width: 564px; height: 153px; }
+    #body_div { height: 340px; width: 100%; }
+        #lan_div { width: 114px; }
+        #frame_div { width: 334px; height: 223px; margin-left: 114px; }
+            #frame_text_div { margin-left: 45px; height: 147px; width: 269px; overflow-y: hidden; }
+        #cnt_div { width: 330px; }
+    #foot_div { height: 80px; }
+        #copyright_l { width: 380px; }
+        #copyright_r { width: 290px; position: relative; left: 150px; }
+.circle { position: absolute; display: block; }

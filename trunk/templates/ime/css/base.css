@@ -1,0 +1,40 @@
+﻿/**
+ * Base.css
+ * IME Style Sheet by XadillaX
+ * Pictures by F-Fine Studio
+ */
+body { color: #fff; font-size: 12px; line-height: 18px; padding: 0 0 0 0; margin: 0 0 0 0; }
+
+.fl { float: left; }
+.fr { float: right; }
+.cl { clear: both; }
+
+.t_l { text-align: left; }
+.t_c { text-align: center; }
+.t_r { text-align: right; }
+
+img { border: none; margin: 0 0 0 0; padding: 0 0 0 0; }
+a { text-decoration: none; }
+a:link { color: #fff; }
+a:visited { color: #fff; }
+a:hover { text-decoration: underline; color: #3FC; }
+
+.black:link { color: #000; }
+.black:visited { color: #000; }
+.black:hover { color: #fff; }
+
+ul.in { list-style-position: inside; display: block; }
+li { list-style: disc; }
+ul.artlist_ul { display: block; list-style-position: inside; color: #000; }
+ul.artlist_ul li { color: #000; font-family: font-family: Arial, "宋体"; }
+
+.gray { color: #aaa; }
+
+div { display: block; }
+div.more { color: #000; }
+div.more a:link { color: #000; }
+div.more a:visited { color: #000; }
+div.more a:hover { color: #000; }
+
+span.black_18 { line-height: 35px; font-weight: bold; font-size: 18px; font-family: "微软雅黑", "黑体", "宋体", Arial; }
+div.gray_hr { height: 1px; background: #c4dee2; line-height: 0px; width: 100%; _background: none; _border-top: 1px solid #c4dee2; }

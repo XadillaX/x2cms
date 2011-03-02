@@ -1,0 +1,67 @@
+
+
+
+/*产品分类*/
+.porduct_sort{ width:198px; height:300px; padding:5px; float:left; line-height:180%}
+.flash_banner{ width:548px; height:308px; float:left; margin:0 7px 0 7px; background-color:#CCCCCC}
+
+/*网站公告*/
+.gonggao{width:178px;height:300px;padding:5px; float:left; line-height:180%; overflow:hidden}
+
+/*图片tab*/
+.box_960x385{width:960px;height:385px; background-color:#f1f1f1}
+.h_960x46{height:46px;background-image:url(../images/tab_title_bg.gif)}
+
+/*鼠标选中*/
+
+.tab_title_black_l{ width:15px; height:46px; background-image:url(../images/tab_title_black_l.gif); float:left}
+.tab_title_black_r{ width:15px; height:46px; background-image:url(../images/tab_title_black_r.gif);
+float:left}
+.tab_title_black_c{ height:46px; line-height:40px; background-image:url(../images/tab_title_black_c.gif);
+float:left; font-size:14px; color:#FFFFFF}
+
+
+.tab_title_gray_l{ width:15px; height:46px; background-image:url(../images/tab_title_gray_l.gif); float:left}
+.tab_title_gray_r{ width:15px; height:46px; background-image:url(../images/tab_title_gray_r.gif);
+float:left}
+.tab_title_gray_c{ height:46px; line-height:46px; background-image:url(../images/tab_title_gray_c.gif);
+float:left; font-size:14px;}
+
+.space_width_3{width:3px; float:left}
+.tab_title_r{ width:14px;height:46px;background-image:url(../images/tab_title_r.gif);float:right}
+
+.tab_content{ width:960px; background-image:url(../images/tab_contnet_bg.gif); text-align:center}
+.tab_content_bottom{ width:960xp;height:20px; background-image:url(../images/tab_content_bottom.gif)}
+
+/*新品展示*/
+.new_product_title{height:35px;line-height:35px}
+.news_product_195x35{width:198px;height:35px;float:left; background-image:url(../images/news_product_195x35.gif) }
+.new_product_type{width:50px;height:35px; text-align:center;line-height:35px;float:left}
+
+
+.product_pic{width:160px; height:230px; float:left; background-color:#FFFFFF}
+.product_pic2{width:160px; height:230px; float:left; background-color:#FFEEDD}
+
+.product_img{ width:140px; height:180px; overflow:hidden; margin:10px auto 0 auto }
+.product_img_title{ width:140px; height:25px; line-height:25px; text-align:center; overflow:hidden; margin:0 auto}
+.product_img_title2{ width:120px; overflow:hidden; margin:0 auto 10px auto}
+
+
+/*第三栏*/
+.taolun_box{width:206px; float:left}
+.taolun_title{ width:206px; height:52px; background-image:url(../images/taolun_title.gif)}
+.taolun_bg{height:210px; background-image:url(../images/taolun_bg.gif);}
+.taolun_content{padding:0 14px 0 14px; line-height:180%}
+.taolun_bottom{height:19px; background-image:url(../images/taolun_bottom.gif)}
+/* 折扣 */
+.sell_box{width:750px;height:270px; float:right}
+.sell_box_title{height:35px}
+.sell_product_182x35{width:182px;height:35px; background-image:url(../images/sell_product_182x35.gif); float:left}
+
+.sell_product_pic{width:150px; height:250px; float:left; background-color:#FFFFFF}
+.sell_product_pic2{width:150px; height:250px; float:left; background-color: #EFEFEF}
+
+.sell_product_img{ width:135px; height:180px; overflow:hidden; margin:10px auto 0 auto }
+.sell_product_img_title{ width:135px; height:25px; line-height:25px; text-align:center; overflow:hidden; margin:0 auto}
+.sell_product_img_title2{ width:110px; overflow:hidden; margin:0 auto 0 auto}
+

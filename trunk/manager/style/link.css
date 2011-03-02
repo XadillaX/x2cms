@@ -1,0 +1,306 @@
+@charset "utf-8";
+a {
+	text-decoration:underline;
+	font-size:12px
+}
+a:link {
+	color:#16387C;
+	text-decoration:none;
+	font-size:12px
+}
+a:visited {
+	color:#16387C;
+	text-decoration:none;
+	font-size:12px
+}
+a:hover, a:active, a:focus {
+	color:red;
+	text-decoration:underline;
+	font-size:12px
+}
+/*虚线*/
+.dah {
+	border-bottom:1px dashed #ccc;
+	height:20px;
+	line-height:20px;
+}
+/*-----------12号黑色宋体-------------*/
+a.black12:link, a.black12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#000;
+}
+a.black12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#000;
+}
+/*-----------14号黑色宋体-------------*/
+a.black14:link, a.black14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#000;
+}
+a.black14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#000;
+}
+/*-----------14号黑色宋体加粗-------------*/
+a.black14b:link, a.black14b:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#000;
+	font-weight:bold
+}
+a.black14b:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#000;
+	font-weight:bold
+}
+/*-----------16号黑色黑体-------------*/
+a.black16:link, a.black16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:#000;
+	font-family:黑体;
+}
+a.black16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#000;
+	font-family:黑体;
+}
+/*-----------12号灰色宋体-------------*/
+a.gray12:link, a.gray12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#666;
+}
+a.gray12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#666;
+}
+/*-----------14号灰色宋体-------------*/
+a.gray14:link, a.gray14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#666;
+}
+a.gray14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#666;
+}
+/*-----------12号红色宋体-------------*/
+a.red12:link, a.red12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:red;
+}
+a.red12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#red;
+}
+/*-----------14号红色宋体-------------*/
+a.red14:link, a.red14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:red;
+}
+a.red14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#red;
+}
+/*-----------16号红色黑体-------------*/
+a.red16:link, a.blue16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:red;
+	font-family:黑体;
+}
+a.red16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#red;
+	font-family:黑体;
+}
+/*-----------12号蓝色宋体-------------*/
+a.blue12:link, a.blue12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#1d2088;
+}
+a.blue12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#0000ff;
+}
+/*-----------14号蓝色宋体-------------*/
+a.blue14:link, a.blue14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#1d2088;
+}
+a.blue14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#0000ff;
+}
+/*-----------16号蓝色黑体-------------*/
+a.blue16:link, a.blue16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:#1d2088;
+	font-family:黑体;
+}
+a.blue16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#0000ff;
+	font-family:黑体;
+}
+/*-----------12号白色宋体-------------*/
+a.white12:link, a.white12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+a.white12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+/*-----------14号白色宋体-------------*/
+a.white14:link, a.white14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+a.white14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+/*-----------16号白色黑体-------------*/
+a.white16:link, a.white16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:#FFFFFF;
+	font-family:黑体;
+}
+a.white16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#FFFFFF;
+	font-family:黑体;
+}
+/*-----------12号黄色宋体-------------*/
+a.yellow12:link, a.yellow12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#ffe400;
+}
+a.yellow12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+/*-----------14号黄色宋体-------------*/
+a.yellow14:link, a.yellow14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#ffe400;
+}
+a.yellow14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+/*-----------16号黄色黑体-------------*/
+a.yellow16:link, a.yellow16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:#ffe400;
+	font-family:黑体;
+}
+a.yellow16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#FFFFFF;
+	font-family:黑体;
+}
+/*-----------12号金色宋体-------------*/
+a.color_gold12:link, a.color_gold12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#ff6600;
+}
+a.color_gold12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+/*-----------14号金色宋体-------------*/
+a.color_gold14:link, a.color_gold14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#ff6600;
+}
+a.color_gold14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#FFFFFF;
+}
+/*-----------16号金色黑体-------------*/
+a.color_gold16:link, a.color_gold16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:#ff6600;
+	font-family:黑体;
+}
+a.color_gold16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#FFFFFF;
+	font-family:黑体;
+}
+/*-----------12号棕红宋体-------------*/
+a.color_zhuhong12:link, a.color_zhuhong12:visited {
+	font-size:12px;
+	text-decoration:none;
+	color:#660000;
+}
+a.color_zhuhong12:hover {
+	font-size:12px;
+	text-decoration:underline;
+	color:#660000;
+}
+/*-----------14号号棕红宋体-------------*/
+a.color_zhuhong14:link, a.color_zhuhong14:visited {
+	font-size:14px;
+	text-decoration:none;
+	color:#660000;
+}
+a.color_zhuhong14:hover {
+	font-size:14px;
+	text-decoration:underline;
+	color:#660000;
+}
+/*-----------16号号棕红黑体-------------*/
+a.color_zhuhong16:link, a.color_zhuhong16:visited {
+	font-size:16px;
+	text-decoration:none;
+	color:#660000;
+	font-family:黑体;
+}
+a.color_zhuhong16:hover {
+	font-size:16px;
+	text-decoration:underline;
+	color:#660000;
+	font-family:黑体;
+}

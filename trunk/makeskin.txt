@@ -1,0 +1,124 @@
+X2CMS皮肤制作介绍：
+首先在皮肤目录下新建一个文件夹，然后按需求建立以下文件
+index.tpl   首页
+artlist.tpl 文章列表页
+single.tpl  文章单页
+contact.tpl 联系页面
+define.asp  自定数据标签ASP页（可选）
+
+{#include:文件名} 这个标签可以包含文件
+在define.asp里可以写自己的标签，用法
+Easp.Tpl "标签名", 值
+
+tpl即模板，标签列表如下（使用时用大括号包含）：
+
+·通用常量标签：
+__sysname__			X2CMS系统名称
+__sysver__			X2CMS版本
+__sysauthor__			X2CMS作者
+__sysweb__			X2CMS此版本发布时间
+
+__title__			当前页标题
+__webname__			网站名称
+__root__			网站根目录
+__skinpath__			当前皮肤目录
+__viscount__			站点计数器
+__beian__			备案
+__copyright__			版权信息
+__webtitle__			网站标题
+__keyword__			关键词
+__description__			描述
+__countcode__			流量代码
+
+__cname__			公司名称
+__zip__				公司邮编
+__phone__			公司电话
+__fax__				公司传真
+__email__			公司电子邮箱
+__qq__				客服QQ
+__qqname__			客服QQ昵称
+__address__			公司地址
+
+
+·通用循环标签
+（循环标签用法）
+{#:标签名}
+这里可以使用标签属性，如{标签名.标签属性}
+{/#:标签名}
+
+__mainnav__			主栏目（根目录下的栏目）
+	__mainnav__.type	此主栏目名称
+	__mainnav__.count	此主栏目文章数量
+	__mainnav__.ord		此主栏目排序
+	__mainnav__.pagecode	此主栏目单页代码
+	__mainnav__.url		此主栏目链接地址
+
+·首页常量标签
+__flash__			所有栏目文章幻灯(7篇)
+
+·文章列表页、单页常量标签
+__pagecode__			当前栏目代码（单页）
+__mapstr__			当前栏目导航字符串
+__pager__			当前栏目文章分页导航代码
+__tid__				当前栏目id
+__typeurl__			当前栏目TYPE-GET值
+__count__			当前栏目文章统计
+__roottitle__			当前栏目的祖栏目名称
+__roottid__			当前栏目的祖栏目id
+__roottypeurl__			当前栏目的祖栏目TYPE-GET值
+__rootcount__			当前栏目的祖栏目文章统计值
+__flash__			所有栏目文章幻灯(7篇)
+
+·文章列表循环属性
+__例__				例：此为一个文章列表标签
+	__例__.shorttitle	截断标题
+	__例__.title		完整标题
+	__例__.content		文章内容
+	__例__.time		发布时间
+	__例__.source		来源
+	__例__.hit		阅读量
+	__例__.url		文章链接
+	__例__.picurl		图片文章图片地址
+	__例__.istj		是否推荐
+	__例__.ispic		是否图片
+	__例__.isflash		是否幻灯
+
+·文章列表页、单页循环标签
+__chnav__			子栏目（此栏目下的下一级栏目）
+	__chnav__.type		子栏目标题
+	__chnav__.count		子栏目文章统计
+	__chnav__.ord		子栏目顺序
+	__chnav__.pagecode	子栏目代码
+	__chnav__.url		子栏目连接地址
+	__chnavlist__		子栏目文章列表（5篇）
+
+__artlist__			当前目录文章循环(分页)
+
+·文章页标签
+__tid__				文章栏目id
+__title__			文章标题
+__content__			文章内容
+__source__			文章来源
+__publictime__			文章发布时间
+__hit__				浏览量
+__titlecolor__			文章标题颜色（未实现）
+__picurl__			图片地址
+__author__			发布人
+
+__pre__				上一篇文章（属性和上面一样如__pre__.tid）
+__next__			下一篇文章
+__pre__.text			上一篇文章文字
+__nexxt__.text			下一篇文章文字
+
+__typetitle__			文章栏目标题
+__typeurl__			文章栏目TYPE-GET值
+__count__			文章栏目统计
+__roottitle__
+__roottid__
+__roottypeurl__
+__rootcount__
+
+常用函数（可用在define.asp中）：
+function get_flash(tid, width, height) tid为栏目编号，width为宽度，height为高度，得到此属性的flash幻灯代码
+function gotTopic(str, strlen) str为字符串，strlen为长度，返回截取strlen长度的字符串
+sub set_art_detail_get(tid, num, pro, tag, cut) tid为栏目id，num为数量，pro为属性（可以是幻灯、图片、推荐或者空，以|分割），tag为标签名，cut为截取标题长度（为0则为默认40），设置tag文章循环标签
